@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview Copy v1 FINAL — Catarina Azevedo | Checklist Diário</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #ffffff;
+    --primary: #7c6ab4;
+    --primary-dark: #5d4e95;
+    --accent: #a8d8c9;
+    --text: #2e2a3a;
+    --muted: #6b6577;
+    --border: #ece7dc;
+    --danger: #d87171;
+    --success: #6fae8b;
+    --gold: #d4b86a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding: 40px 20px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  .doc-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 24px;
+    background: linear-gradient(135deg, #efe9f7 0%, #e8f2ee 100%);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+  .doc-header h1 {
+    font-size: 26px;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+  }
+  .doc-header p { color: var(--muted); font-size: 14px; }
+  .doc-header .meta {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 14px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .doc-header .meta span {
+    background: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .doc-header .meta .ok {
+    background: #e8f5ee;
+    color: var(--success);
+    border-color: #c8e6d3;
+    font-weight: 600;
+  }
+
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--primary);
+    text-transform: uppercase;
+    background: #f0ebfa;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .pre-head {
+    font-size: 13px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .h2 {
+    font-size: 26px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 16px 0 8px;
+  }
+  .sub {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  p { margin-bottom: 14px; color: var(--text); font-size: 16px; }
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 18px 34px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(124, 106, 180, 0.3);
+    margin: 14px 0 8px;
+  }
+  .micro {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .bullets {
+    list-style: none;
+    margin: 14px 0;
+  }
+  .bullets li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    font-size: 16px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .bullets li:last-child { border-bottom: none; }
+  .bullets li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .card {
+    background: #f9f6ff;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 4px solid var(--primary);
+  }
+  .card h4 {
+    font-size: 16px;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+  }
+  .card p { font-size: 14px; margin: 0; color: var(--muted); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 18px 0;
+  }
+  .col {
+    padding: 18px;
+    border-radius: 10px;
+  }
+  .col.yes { background: #f2f9f5; border-left: 4px solid var(--success); }
+  .col.no  { background: #fdf4f4; border-left: 4px solid var(--danger); }
+  .col h4 { font-size: 15px; margin-bottom: 10px; }
+  .col ul { list-style: none; }
+  .col ul li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 14px;
+  }
+  .col.yes ul li::before { content: "\2713"; color: var(--success); position: absolute; left: 0; font-weight: 700; }
+  .col.no  ul li::before { content: "\2715"; color: var(--danger); position: absolute; left: 0; font-weight: 700; }
+
+  /* Timer box */
+  .timer-wrap {
+    text-align: center;
+    margin: 20px 0 14px;
+  }
+  .timer-label {
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .timer {
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    font-size: 44px;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, #d87171 0%, #b85050 100%);
+    padding: 14px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(216, 113, 113, 0.35);
+    letter-spacing: 2px;
+  }
+  .timer-note {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .offer-box {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%);
+    border: 2px dashed var(--gold);
+    border-radius: 14px;
+    padding: 26px;
+    margin: 20px 0;
+  }
+  .offer-box ul { list-style: none; }
+  .offer-box ul li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    font-size: 15px;
+  }
+  .offer-box ul li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .price-old { text-decoration: line-through; color: var(--muted); font-size: 18px; }
+  .price-new { font-size: 42px; font-weight: 800; color: var(--primary-dark); margin: 8px 0; }
+
+  .guarantee-box {
+    background: #f2f9f5;
+    border: 2px solid var(--success);
+    border-radius: 14px;
+    padding: 26px;
+    text-align: center;
+  }
+  .guarantee-box .seal {
+    display: inline-block;
+    background: var(--success);
+    color: white;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    line-height: 1;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .guarantee-box .seal strong { font-size: 22px; display: block; }
+
+  .faq-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item .q {
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .faq-item .a { font-size: 15px; color: var(--muted); }
+
+  .signals-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .signals-list li {
+    padding: 12px 12px 12px 44px;
+    position: relative;
+    font-size: 15px;
+    background: #f9f6ff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--primary);
+  }
+  .signals-list li::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    background: white;
+  }
+
+  .mockup-placeholder {
+    background: #f0ebfa;
+    border: 2px dashed var(--primary);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--primary-dark);
+    margin: 16px 0;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .impl-note {
+    background: #fffbe6;
+    border-left: 4px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: #7a5f1f;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 20px 12px; }
+    .section { padding: 22px 20px; }
+    .h1 { font-size: 26px; }
+    .h2 { font-size: 22px; }
+    .two-col { grid-template-columns: 1fr; }
+    .timer { font-size: 32px; padding: 12px 20px; }
+    .price-new { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="doc-header">
+    <h1>Preview Copy v1 FINAL — Landing Page</h1>
+    <p>Produto: Checklist Diário para Crianças Autistas &middot; Autora: <strong>Catarina Azevedo</strong> &middot; Contratante da nova LP: Laura Petim</p>
+    <div class="meta">
+      <span>Framework: PAS</span>
+      <span>Idioma: PT-PT neutro</span>
+      <span>Moeda: EURO</span>
+      <span class="ok">V1 FINAL — pronta para aprovação</span>
+      <span>Data: 2026-04-09</span>
+    </div>
+  </div>
+
+  <div class="impl-note">
+    <strong>Notas de implementação (Fase 2 — Design):</strong><br>
+    • Todos os CTAs redirecionam para <strong>checkout Hotmart</strong> — URL a ser fornecida pelo Elton no momento do build.<br>
+    • <strong>Timer de 10:00</strong> na Secção 10 (Oferta), acima do preço. Reseta por sessão do utilizador.<br>
+    • Mockup do PDF obrigatório nas secções 4 e 10 — pedir renders à Laura.<br>
+    • Rodapé minimalista: apenas Política de Privacidade + Termos de Uso + copyright Catarina Azevedo.
+  </div>
+
+  <!-- SECÇÃO 1 — HERO -->
+  <div class="section">
+    <span class="section-label">1. Hero</span>
+    <div class="pre-head">Para pais, mães e cuidadores de crianças autistas</div>
+    <h1 class="h1">Transforme a rotina do seu filho autista em dias mais calmos, previsíveis e seguros — mesmo que hoje tudo pareça difícil</h1>
+    <p class="sub">Um checklist diário simples e prático para reduzir crises, criar previsibilidade e fortalecer a segurança emocional das crianças autistas — sem métodos agressivos, sem linguagem técnica, sem promessas irreais.</p>
+    <a href="#oferta" class="cta">Quero uma rotina mais calma hoje</a>
+    <div class="micro">Acesso imediato &middot; Garantia de 15 dias &middot; PDF para imprimir ou usar no telemóvel</div>
+    <div class="micro" style="margin-top:10px;">Criado por quem conhece a realidade do espectro &middot; Pagamento seguro &middot; Download instantâneo</div>
+  </div>
+
+  <!-- SECÇÃO 2 — DOR -->
+  <div class="section">
+    <span class="section-label">2. Identificação da dor</span>
+    <h2 class="h2">A rotina do dia a dia não precisa ser uma fonte constante de stress e crises</h2>
+    <p>Se você é pai, mãe ou cuidador de uma criança autista, já sabe como a falta de previsibilidade pode gerar ansiedade, resistência, birras e esgotamento emocional — tanto na criança quanto em você.</p>
+    <p>A manhã começa com resistência para levantar. O pequeno-almoço vira uma negociação. Qualquer mudança no trajeto gera uma crise. A hora de dormir parece uma batalha que recomeça todas as noites.</p>
+    <p>Já leu livros, guardou posts no Instagram, tentou aplicar tudo o que os terapeutas sugerem — e mesmo assim sente que está sempre a falhar.</p>
+    <p><strong>Não está.</strong> O que falta não é esforço. É uma estrutura simples, visual e adaptável — que funcione na vida real, não apenas na teoria.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h4>Crises frequentes e difíceis de gerir</h4>
+        <p>Você organiza tudo com carinho, mas pequenos imprevistos acabam gerando crises, choros ou comportamentos difíceis de lidar.</p>
+      </div>
+      <div class="card">
+        <h4>Falta de rotina e previsibilidade</h4>
+        <p>A ausência de hábitos claros gera ansiedade na criança e desgaste emocional em toda a família.</p>
+      </div>
+      <div class="card">
+        <h4>Cansaço, culpa e insegurança diária</h4>
+        <p>Sentir que está sempre a errar, mesmo dando o melhor de si, é emocionalmente desgastante.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 3 — AGITAÇÃO -->
+  <div class="section">
+    <span class="section-label">3. Agitação</span>
+    <h2 class="h2">A falta de previsibilidade é exaustiva — para a criança e para você</h2>
+    <p>Quando a rotina é caótica, a criança no espectro sente o mundo como um lugar incerto. E a incerteza é, para ela, uma das maiores fontes de ansiedade.</p>
+    <p>O resultado é o que você já conhece: crises que parecem surgir do nada, resistência a tarefas simples, noites mal dormidas, dias pesados, relações tensas dentro de casa.</p>
+    <p>E, no meio disso tudo, uma mãe que tenta ser terapeuta, educadora, cuidadora e dona de casa — sem nunca ter um manual que faça sentido para o SEU filho.</p>
+    <p><strong>Não precisa continuar assim.</strong></p>
+  </div>
+
+  <!-- SECÇÃO 4 — SOLUÇÃO -->
+  <div class="section">
+    <span class="section-label">4. Apresentação da solução</span>
+    <div class="pre-head">A solução prática que faltava</div>
+    <h2 class="h2">Uma rotina clara pode transformar o dia a dia da sua família</h2>
+    <p>O Checklist Diário para Crianças Autistas foi criado para ajudar pais e cuidadores a organizar a rotina de forma simples, previsível e acolhedora.</p>
+    <p>Com passos práticos e hábitos diários fáceis de aplicar, você passa a reduzir a ansiedade da criança, prevenir crises e trazer mais segurança emocional para toda a família — sem sobrecarga e sem improvisos.</p>
+    <p>Não é mais um livro teórico sobre autismo. É uma ferramenta de uso diário, nascida da observação real de como crianças no espectro respondem melhor quando têm previsibilidade e referências visuais.</p>
+    <div class="mockup-placeholder">[ MOCKUP DO PDF AQUI — render das páginas internas + vista no telemóvel ]</div>
+  </div>
+
+  <!-- SECÇÃO 4.5 — O QUE É -->
+  <div class="section">
+    <span class="section-label">4.5. O que é o checklist</span>
+    <h2 class="h2">O que é o Checklist Diário para Crianças Autistas?</h2>
+    <p>Este ebook é um guia prático em formato de checklist que ajuda você a estruturar o dia da criança com clareza e consistência.</p>
+    <p><strong>Ele foi desenvolvido para:</strong></p>
+    <ul class="bullets">
+      <li>Criar rotinas previsíveis</li>
+      <li>Reduzir crises e comportamentos desafiadores</li>
+      <li>Apoiar a regulação emocional</li>
+      <li>Facilitar a comunicação entre adultos e criança</li>
+    </ul>
+    <p class="micro"><em>Tudo de forma simples, respeitosa e adaptável à realidade de cada família.</em></p>
+  </div>
+
+  <!-- SECÇÃO 5 — COMPARATIVO -->
+  <div class="section">
+    <span class="section-label">5. Comparativo</span>
+    <h2 class="h2">Por que este material é diferente dos ebooks que você já viu?</h2>
+    <div class="two-col">
+      <div class="col no">
+        <h4>Ebooks tradicionais</h4>
+        <ul>
+          <li>Conteúdo muito genérico e repetitivo</li>
+          <li>Focam mais em explicações do que em aplicação prática</li>
+          <li>Leitura longa, difícil de colocar em prática no dia a dia</li>
+          <li>Não ajudam na organização real da rotina</li>
+          <li>Acabam esquecidos no telemóvel ou no computador</li>
+          <li>Não oferecem apoio nos momentos de crise ou transição</li>
+        </ul>
+      </div>
+      <div class="col yes">
+        <h4>Checklist Diário para Crianças Autistas</h4>
+        <ul>
+          <li>Um checklist simples e visual</li>
+          <li>Orientação clara para estruturar a rotina</li>
+          <li>Apoio para lidar com mudanças e imprevistos</li>
+          <li>Hábitos diários que trazem mais calma e previsibilidade</li>
+          <li>Um guia pensado para a realidade de pais e cuidadores</li>
+          <li>Reduz a sobrecarga emocional de toda a família</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <a href="#oferta" class="cta">Quero o checklist completo</a>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 5.5 — O QUE ESTÁ INCLUSO -->
+  <div class="section">
+    <span class="section-label">5.5. Stack de valor</span>
+    <h2 class="h2">Tudo o que você recebe ao adquirir hoje</h2>
+
+    <h3 class="h3">Produto principal — Checklist Diário Completo (PDF)</h3>
+    <ul class="bullets">
+      <li>Checklist geral para organização da rotina do dia inteiro</li>
+      <li>Checklists separados por momento: manhã, transições e noite</li>
+      <li>Orientações simples e diretas para prevenir e reduzir crises</li>
+      <li>Estrutura prática para criar previsibilidade todos os dias</li>
+      <li>Formato digital em PDF, fácil de imprimir ou usar no telemóvel / tablet</li>
+      <li>Adaptável ao ritmo e necessidades de cada criança</li>
+    </ul>
+
+    <h3 class="h3">Bónus Exclusivo — Kit Playlists para Rotina e Calmaria (Spotify)</h3>
+    <p><span class="price-old">Valor 19,90 EUR</span> &middot; <strong style="color:var(--success);">HOJE GRÁTIS</strong></p>
+    <p>Um complemento prático para tornar a rotina mais calma. Você recebe acesso a playlists criadas para apoiar diferentes momentos do dia:</p>
+    <ul class="bullets">
+      <li>Foco e atenção (para atividades e estudo)</li>
+      <li>Conexão e afeto (para momentos juntos)</li>
+      <li>Relaxamento e sono (para a hora de dormir)</li>
+    </ul>
+    <p class="micro"><em>Acesso via Spotify (conta gratuita). Não é necessário plano pago.</em></p>
+
+    <h3 class="h3">Acesso imediato por e-mail</h3>
+    <p>Assim que a compra é aprovada, você recebe tudo no seu e-mail. Pode começar a aplicar hoje mesmo.</p>
+  </div>
+
+  <!-- SECÇÃO 6 — BENEFÍCIOS -->
+  <div class="section">
+    <span class="section-label">6. Benefícios / transformação</span>
+    <h2 class="h2">O que muda na sua rotina a partir desta semana</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h4>Mais organização, menos improviso</h4>
+        <p>Você vai saber o que vem a seguir — e o seu filho também. Menos surpresas, menos gatilhos.</p>
+      </div>
+      <div class="card">
+        <h4>Redução de crises e tensão</h4>
+        <p>Quando a criança tem referências visuais claras, a ansiedade diminui. As crises ficam menos frequentes e mais curtas.</p>
+      </div>
+      <div class="card">
+        <h4>Manhãs, transições e noites mais leves</h4>
+        <p>Os três momentos mais difíceis do dia ganham estrutura simples e visual.</p>
+      </div>
+      <div class="card">
+        <h4>Mais segurança na sua maternidade / paternidade</h4>
+        <p>Você deixa de improvisar o tempo todo. Sabe o que funciona e o que não funciona.</p>
+      </div>
+      <div class="card">
+        <h4>Ambiente familiar mais tranquilo</h4>
+        <p>Quando a rotina flui, todos em casa respiram melhor — incluindo os irmãos.</p>
+      </div>
+      <div class="card">
+        <h4>Ferramenta para o resto da vida dela</h4>
+        <p>O checklist é flexível: você adapta à idade, à fase e às necessidades específicas da sua criança.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 7 — PARA QUEM É -->
+  <div class="section">
+    <span class="section-label">7. Para quem é / não é</span>
+    <h2 class="h2">Este material é para você?</h2>
+    <div class="two-col">
+      <div class="col yes">
+        <h4>Para quem É</h4>
+        <ul>
+          <li>Pais e mães de crianças autistas que querem mais calma e previsibilidade no dia a dia</li>
+          <li>Cuidadores e educadores que lidam com crises, ansiedade e resistência a rotina</li>
+          <li>Quem sente que imprevistos viram choros ou sobrecarga emocional</li>
+          <li>Famílias que querem organizar o dia da criança sem rigidez excessiva</li>
+          <li>Quem busca orientação prática, simples e aplicável imediatamente</li>
+          <li>Quem deseja mais segurança emocional para a criança e menos desgaste para a família</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h4>Para quem NÃO é</h4>
+        <ul>
+          <li>Para quem procura cura ou tratamento médico</li>
+          <li>Para quem acredita que rotina não é importante para crianças autistas</li>
+          <li>Para quem não quer aplicar pequenas mudanças no dia a dia</li>
+          <li>Para quem busca soluções milagrosas ou resultados instantâneos</li>
+          <li>Para quem não convive nem cuida de uma criança no espectro</li>
+        </ul>
+      </div>
+    </div>
+    <p class="micro"><em>Este material é educativo e de apoio à rotina. Não substitui acompanhamento profissional especializado.</em></p>
+    <div style="text-align:center;margin-top:16px;">
+      <a href="#oferta" class="cta">Sim, quero mais calma na rotina do meu filho</a>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 8 — SINAIS (substitui depoimentos) -->
+  <div class="section">
+    <span class="section-label">8. Sinais que o checklist pode ajudar</span>
+    <div class="pre-head">Reconhece-se em alguma destas situações?</div>
+    <h2 class="h2">Se responder "sim" a três ou mais destes pontos, este checklist foi pensado para si</h2>
+    <p>Não existe uma família igual a outra, mas existem padrões comuns no dia a dia de quem cuida de uma criança no espectro. Os sinais abaixo são os que mais aparecem quando mães e pais procuram ajuda para organizar a rotina.</p>
+    <ul class="signals-list">
+      <li>As manhãs são tensas e qualquer pequeno atraso vira uma crise</li>
+      <li>O seu filho resiste a mudanças pequenas no trajeto, no prato ou no horário</li>
+      <li>Imprevistos simples (visita, barulho, mudança de planos) geram choros difíceis de acalmar</li>
+      <li>A hora de dormir é uma batalha que se repete todas as noites</li>
+      <li>Já tentou aplicar orientações de terapeutas, mas sente que não consegue manter no dia a dia</li>
+      <li>Sente-se exausta, culpada e com a sensação de estar sempre a falhar</li>
+      <li>Gostaria de ter um "mapa" simples para saber o que fazer em cada momento do dia</li>
+      <li>Procura uma ferramenta prática que não exija formação técnica para usar</li>
+    </ul>
+    <p><strong>Se reconheceu pelo menos três destes sinais, o Checklist Diário para Crianças Autistas foi desenhado exatamente para a sua realidade.</strong></p>
+    <p class="micro"><em>Nota: este material é educativo e de apoio à rotina. Não substitui acompanhamento profissional especializado.</em></p>
+  </div>
+
+  <!-- SECÇÃO 9 — AUTORA -->
+  <div class="section">
+    <span class="section-label">9. Sobre a autora</span>
+    <h2 class="h2">Quem criou o ebook</h2>
+    <p><strong>Catarina Azevedo</strong></p>
+    <p>Sou a Catarina Azevedo, criadora de conteúdos educativos voltados para o apoio de pais e cuidadores de crianças autistas.</p>
+    <p>Este material nasceu da necessidade real de trazer mais clareza, organização e previsibilidade para o dia a dia, respeitando o ritmo de cada criança e fortalecendo a relação familiar.</p>
+    <p>O Checklist Diário para Crianças Autistas foi desenvolvido com foco em rotina, orientação prática e apoio emocional, reunindo estratégias simples que podem ser aplicadas em casa, sem sobrecarregar pais ou cuidadores.</p>
+    <p><strong>Missão:</strong> Ajudar famílias a construírem dias mais calmos, seguros e acolhedores, através de hábitos consistentes e ferramentas acessíveis.</p>
+    <div class="mockup-placeholder" style="font-size:13px;padding:20px;">[ Foto da Catarina aqui — pedir para enviar ]</div>
+  </div>
+
+  <!-- SECÇÃO 10 — OFERTA (com timer) -->
+  <div class="section" id="oferta">
+    <span class="section-label">10. Oferta</span>
+    <div class="pre-head">Oferta especial de lançamento</div>
+    <h2 class="h2">Veja tudo o que você vai levar hoje</h2>
+
+    <div class="timer-wrap">
+      <div class="timer-label">Esta oferta expira em:</div>
+      <div class="timer">10:00</div>
+      <span class="timer-note">[ Countdown regressivo de 10 minutos &mdash; reseta por sessão do utilizador ]</span>
+    </div>
+
+    <div class="offer-box">
+      <h3 class="h3" style="margin-top:0;">Você vai receber:</h3>
+      <ul>
+        <li>Checklist Diário para Crianças Autistas (PDF) &mdash; <strong>29,00 EUR</strong></li>
+        <li>Checklists por momento do dia (manhã / transições / noite)</li>
+        <li>Orientações práticas para redução de crises</li>
+        <li><strong>BÓNUS:</strong> Kit Playlists para Rotina e Calmaria (Spotify) &mdash; <strong>19,90 EUR</strong></li>
+        <li>Acesso imediato por e-mail</li>
+      </ul>
+      <div style="margin-top:22px;text-align:center;">
+        <div class="price-old">Valor total: 48,90 EUR</div>
+        <div style="font-size:14px;color:var(--muted);margin-top:6px;">Por apenas:</div>
+        <div class="price-new">14,90 EUR</div>
+        <div class="micro"><em>Preço promocional de lançamento — por tempo limitado</em></div>
+      </div>
+      <div style="text-align:center;margin-top:18px;">
+        <a href="#" class="cta">Quero uma rotina mais calma</a>
+        <div class="micro">Acesso imediato &middot; Download instantâneo &middot; Sem mensalidades &middot; Pagamento seguro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 11 — GARANTIA -->
+  <div class="section">
+    <span class="section-label">11. Garantia</span>
+    <div class="guarantee-box">
+      <div class="seal"><strong>15</strong>DIAS</div>
+      <h2 class="h2">Garantia de 15 Dias</h2>
+      <p>Você terá 15 dias para testar o checklist na rotina da sua criança.</p>
+      <p>Se nesse período acreditar que o conteúdo não é para você, não tem problema: <strong>eu devolvo 100% do seu dinheiro.</strong></p>
+      <p>Sem perguntas, sem complicação, sem burocracia. Todo o risco fica comigo. A sua única tarefa é experimentar.</p>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 12 — FAQ -->
+  <div class="section">
+    <span class="section-label">12. FAQ</span>
+    <h2 class="h2">Perguntas frequentes</h2>
+
+    <div class="faq-item">
+      <div class="q">Este checklist substitui médicos ou terapeutas?</div>
+      <div class="a">Não. Este material não substitui acompanhamento médico, psicológico ou terapêutico. Ele foi criado como um apoio prático para o dia a dia, ajudando pais e cuidadores a organizarem rotinas com mais previsibilidade, calma e segurança.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Para quem este checklist é indicado?</div>
+      <div class="a">Para pais, mães e cuidadores de crianças autistas, que desejam mais organização na rotina diária, sem linguagem técnica ou termos clínicos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Preciso de formação ou conhecimento técnico para usar?</div>
+      <div class="a">Não. O checklist é simples, visual e intuitivo, pensado para a realidade das famílias, podendo ser adaptado à rotina e às necessidades de cada criança.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Como este material pode ajudar no dia a dia?</div>
+      <div class="a">Ele ajuda a criar rotinas mais previsíveis, reduzir a ansiedade causada por imprevistos e facilitar momentos de transição ao longo do dia. Sempre de forma respeitosa, flexível e adaptável.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Em quanto tempo posso notar resultados?</div>
+      <div class="a">Cada criança é única. Muitas famílias percebem mais organização e sensação de tranquilidade nos primeiros dias, mas os resultados dependem da constância e da adaptação à rotina familiar.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">O bónus das playlists tem finalidade terapêutica?</div>
+      <div class="a">Não. As playlists são um recurso complementar, pensadas para criar ambientes mais calmos e acolhedores. Não têm finalidade médica nem substituem qualquer tratamento.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Posso usar o checklist todos os dias?</div>
+      <div class="a">Sim. Ele foi criado para ser usado diariamente, de forma leve, sem pressão e respeitando o ritmo da criança e da família.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">E se eu sentir que o material não é para mim?</div>
+      <div class="a">Sem problema. Você tem 15 dias de garantia para testar com tranquilidade. Se não fizer sentido para a sua família, pode solicitar o reembolso dentro desse prazo.</div>
+    </div>
+  </div>
+
+  <!-- SECÇÃO 13 — CTA FINAL -->
+  <div class="section" style="background:linear-gradient(135deg, #efe9f7 0%, #e8f2ee 100%);text-align:center;">
+    <span class="section-label">13. CTA Final</span>
+    <h2 class="h2">Amanhã de manhã pode ser diferente</h2>
+    <p>Você não precisa de mais um livro. Não precisa de mais um curso longo. Precisa de uma ferramenta simples para aplicar hoje mesmo — e começar a sentir a diferença já nos primeiros dias.</p>
+    <p>Este checklist está pronto. A garantia de 15 dias protege você. A única coisa entre você e uma rotina mais calma é o clique abaixo.</p>
+    <p>Por apenas <strong>14,90 EUR</strong> <span class="price-old">(valor total 48,90 EUR)</span>.</p>
+    <a href="#" class="cta">Sim, quero começar hoje</a>
+    <div class="micro">Acesso imediato &middot; Download em PDF &middot; Garantia de 15 dias</div>
+  </div>
+
+  <footer>
+    <p><strong>Catarina Azevedo</strong></p>
+    <p style="margin-top:6px;"><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+    <p style="margin-top:10px;">&copy; 2026 Catarina Azevedo. Todos os direitos reservados.</p>
+    <p style="margin-top:14px;font-size:11px;max-width:600px;margin-left:auto;margin-right:auto;"><em>Disclaimer: este material é um guia prático de apoio à rotina familiar. Não substitui acompanhamento terapêutico, psicológico, pedagógico ou médico. Em caso de dúvidas clínicas, consulte sempre um profissional qualificado.</em></p>
+  </footer>
+
+</div>
+</body>
+</html>
