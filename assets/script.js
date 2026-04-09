@@ -1,89 +1,100 @@
 // ============================================
-// Checklist Diario — E-Ink / Paper
-// Zero motion by default, respeita prefers-reduced-motion
+// LP LAURA — Checklist Diário (v3 Cosmic Calm Premium)
+// Reveal on scroll + countdown + sticky CTA + smooth scroll
+// Respeita prefers-reduced-motion
 // ============================================
 (function () {
   'use strict';
 
-  const prefersReducedMotion =
-    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Nav scrolled state + sticky CTA mobile
-  const nav = document.querySelector('.nav');
-  const stickyCTA = document.querySelector('.sticky-cta');
-  const hero = document.querySelector('.hero');
-
-  const onScroll = () => {
-    if (window.scrollY > 10) {
-      nav && nav.classList.add('scrolled');
-    } else {
-      nav && nav.classList.remove('scrolled');
-    }
-
-    // Sticky CTA mobile — aparece a partir de 500px OU meio do hero
-    if (stickyCTA && hero) {
-      const heroHeight = hero.offsetHeight;
-      const trigger = Math.min(heroHeight * 0.55, 500);
-      if (window.scrollY > trigger) {
-        stickyCTA.classList.add('visible');
-      } else {
-        stickyCTA.classList.remove('visible');
-      }
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Scroll reveal — SO se motion permitido E IO suportado
-  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    // Ativa o modo motion adicionando classe ao html (CSS gateia por essa classe)
+  // Ativa motion apenas se o usuário não pediu para reduzir
+  if (!prefersReduced) {
     document.documentElement.classList.add('js-motion');
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px 10% 0px' }
-    );
-    document.querySelectorAll('.reveal').forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('visible');
-      } else {
-        io.observe(el);
-      }
-    });
-
-    // Safety: depois de 1.5s, tudo visivel (se scroll nao disparou)
-    setTimeout(() => {
-      document.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
-        el.classList.add('visible');
-      });
-    }, 1500);
   }
-  // Se reduced-motion: CSS ja mantem tudo visivel, nada a fazer.
 
-  // Smooth scroll para ancoras — instantaneo se reduced-motion
+  // ---------- Reveal on scroll ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window && !prefersReduced) {
+    // Ativa o modo reveal (esconde todos .reveal via CSS) e depois observa
+    document.documentElement.classList.add('js-reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach((el) => io.observe(el));
+    // Safety net — se alguma .reveal ainda estiver invisível após 3s (ex: abaixo do fold nunca scrollado), força visível
+    setTimeout(() => {
+      revealEls.forEach((el) => {
+        if (!el.classList.contains('is-in')) {
+          const r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight * 2) el.classList.add('is-in');
+        }
+      });
+    }, 3000);
+  }
+  // Sem JS / sem IO / prefers-reduced-motion: .reveal já é visível por padrão no CSS
+
+  // ---------- Smooth scroll para âncoras internas ----------
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
       if (!href || href === '#' || href === '#checkout') return;
       const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 16;
-        window.scrollTo({
-          top,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
-      }
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
     });
   });
 
-  // FAQ: multi-open permitido (user control, e-reader feel)
+  // ---------- Sticky CTA mobile — aparece aos 500px ----------
+  const sticky = document.querySelector('.sticky-cta');
+  if (sticky) {
+    let ticking = false;
+    const toggleSticky = () => {
+      if (window.scrollY > 500) sticky.classList.add('is-visible');
+      else sticky.classList.remove('is-visible');
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(toggleSticky);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ---------- Countdown até 30 Abril 2026 ----------
+  const countdownEl = document.querySelector('[data-countdown]');
+  if (countdownEl) {
+    const deadline = new Date('2026-04-30T23:59:59').getTime();
+    const numEl = countdownEl.querySelector('.countdown-ring__num');
+    const labelEl = countdownEl.querySelector('.countdown-ring__label');
+
+    const updateCountdown = () => {
+      const now = Date.now();
+      const diff = deadline - now;
+      if (diff <= 0) {
+        if (numEl) numEl.textContent = '0';
+        if (labelEl) labelEl.textContent = 'Encerrado';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      if (numEl) numEl.textContent = String(days);
+      if (labelEl) labelEl.textContent = days === 1 ? 'Dia restante' : 'Dias restantes';
+    };
+    updateCountdown();
+    // Atualiza a cada hora (suficiente para contagem de dias)
+    setInterval(updateCountdown, 60 * 60 * 1000);
+  }
+
+  // ---------- Pulse no CTA crítico da oferta ----------
+  const criticalCTAs = document.querySelectorAll('[data-pulse]');
+  if (!prefersReduced) {
+    criticalCTAs.forEach((el) => el.classList.add('is-pulsing'));
+  }
 })();
