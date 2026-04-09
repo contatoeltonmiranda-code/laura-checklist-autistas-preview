@@ -10,13 +10,13 @@
 
 ---
 
-**Data:** 2026-04-09 (v1.2 — revisao AGRESSIVA emocional, Meta-safe)
+**Data:** 2026-04-09 (v1.3 — correcoes CRO aplicadas: prova por dados, bio reposicionada, urgencia real, micro-CTA, frase-bordao)
 **Framework:** BAB (Before-After-Bridge) + especificidade cirurgica (micro-cenas viscerais)
 **Tom:** Comercial, visceral, com mordida — dor especifica, desejo ardente, zero violacao Meta
 **Idioma:** PT-PT neutro (Portugal, moeda EUR)
 **Compliance:** Sem promessas clinicas, sem "cura", linguagem de comunidade (nao afirma caracteristicas do leitor)
 **Preco:** 14,90 EUR (promocional, de 48,90 EUR)
-**Garantia:** 15 dias
+**Garantia:** 15 dias pra sentir a diferenca
 **Autora:** Catarina Azevedo
 
 ---
@@ -24,6 +24,12 @@
 ## MECANISMO UNICO: Previsibilidade Visual
 
 Nenhum ebook tradicional entrega isto: um mapa que a crianca consegue VER e seguir com os proprios olhos. Os guias classicos explicam ao adulto o que fazer. Este checklist e diferente — traduz o dia inteiro num formato visual que a crianca no espectro consegue antecipar sozinha. E exatamente por isso que baixa a ansiedade dela antes da crise comecar. A mae nao precisa de mais teoria. Precisa de imprimir uma folha.
+
+## FRASE-BORDAO (repete 3x na copy)
+
+> **Quando o dia deixa de ser ouvido e passa a ser visto, tudo muda.**
+
+Aparece em: Secao 3 (mecanismo), Secao 8 (fecho das 8 cenas), Secao 13 (CTA final).
 
 ---
 
@@ -39,11 +45,11 @@ Sem mais um livro para ler. Sem mais um curso para assistir. Um checklist visual
 
 **CTA:** QUERO A MANHA DE AMANHA DIFERENTE
 
-**Micro-texto:** Acesso imediato por e-mail - Garantia incondicional de 15 dias - PDF para imprimir ou usar no telemovel
+**Micro-texto:** Acesso imediato por e-mail - Garantia de 15 dias pra sentir a diferenca - PDF para imprimir ou usar no telemovel
 
 **Selos de confianca:**
 - 100% pratico, zero teoria
-- Criado a partir da observacao real de criancas no espectro
+- Baseado em apoios visuais — pratica reconhecida em investigacao internacional sobre TEA
 - Pagamento seguro via Hotmart
 
 ---
@@ -72,6 +78,10 @@ A padaria do costume estava fechada. Aquilo que parecia um detalhe virou 40 minu
 **Card 3 — A pergunta que ninguem faz em voz alta**
 A pergunta que aparece as 3 da manha, quando a casa finalmente dorme: *e se eu estiver a piorar tudo sem perceber?* Ela nao aparece nas consultas. Ela aparece no teto do quarto, em silencio, e fica la ate o alarme tocar.
 
+**[MICRO-CTA DE COMPROMISSO — caixa destacada no fim da secao]**
+> Se 2 ou 3 destas cenas ja aconteceram esta semana, talvez nao precise de ler o resto da pagina.
+> **[MOSTRA-ME COMO →]** (scroll para Secao 10 — Oferta)
+
 ---
 
 ## SECAO 3 — EDUCACAO DO MECANISMO
@@ -87,8 +97,34 @@ Quando a crianca consegue apontar para a folha e ver com os proprios olhos "agor
 
 Nao e magia. E previsibilidade visual — e funciona porque respeita o modo como o cerebro no espectro realmente processa o dia.
 
+**Caixa destacada (frase-bordao):**
+> Quando o dia deixa de ser ouvido e passa a ser visto, tudo muda.
+
+---
+
+## SECAO 3.5 — NOVA: O QUE A INVESTIGACAO JA SABE (Prova por dados)
+
+**Sobre-headline:** Nao e opiniao. E pratica reconhecida ha anos.
+
+**Headline:** Porque os apoios visuais funcionam — o que a investigacao internacional ja documentou
+
+**Corpo:**
+A ideia de organizar o dia de uma crianca no espectro com apoios visuais nao nasceu aqui. Ela e uma das praticas mais estudadas na area do autismo nas ultimas duas decadas. Tres dados que ajudam a compreender porque e que uma folha impressa pode mudar uma casa:
+
+**Dado 1 — 60% das maes de criancas com TEA vivem em stress cronico elevado**
+Numa escala clinica reconhecida (Parenting Stress Index), seis em cada dez maes de criancas no espectro pontuam na faixa de stress parental elevado — significativamente acima das maes de criancas neurotipicas.
+*Fonte: revisao publicada no Journal of Autism and Developmental Disorders (Springer, 2025) e Autism Research Institute.*
+
+**Dado 2 — Apoios visuais sao pratica baseada em evidencia para TEA**
+A National Clearinghouse on Autism Evidence and Practice reconhece os apoios visuais (visual schedules) como uma das 28 praticas baseadas em evidencia para criancas no espectro. Revisoes sistematicas mostram que reduzem comportamentos desafiantes durante transicoes e aumentam tempo de tarefa de forma autonoma.
+*Fonte: National Clearinghouse on Autism Evidence and Practice; revisao sistematica publicada na International Journal of Developmental Disabilities (2024).*
+
+**Dado 3 — Em Portugal, ha cada vez mais familias a procurar ferramentas praticas**
+Estudos populacionais recentes apontam para uma prevalencia de TEA em idade escolar em Portugal entre 0,5% e 1% das criancas — muito acima das estimativas mais antigas. Mais diagnosticos significa mais familias a chegar a casa no dia do diagnostico sem saber por onde comecar.
+*Fonte: estudo ASDEU na regiao Centro de Portugal (Frontiers in Psychiatry, 2023) e estudo populacional nos Acores (Current Psychology, 2025).*
+
 **Caixa destacada:**
-> A pergunta nao e "como faze-lo obedecer?". E "como o ajudar a saber o que vem a seguir?".
+> Estes dados nao prometem resultado nenhum. So mostram que a estrutura visual nao e uma ideia nova nem uma moda — e uma das praticas mais documentadas na area. O que e novo aqui e o **formato**: uma folha pronta, sem precisar de construir do zero.
 
 ---
 
@@ -206,7 +242,8 @@ Para quando um imprevisto quebrou o dia e e preciso voltar ao eixo em 3 passos. 
 7. Ter o telemovel com dezenas de screenshots sobre autismo — e nenhum a funcionar em casa
 8. Dizer em voz alta "nao sei o que mais fazer" pelo menos uma vez esta semana
 
-**Fecho:** Tres ou mais destas cenas nao e um sinal de falha. E um sinal de que falta a ferramenta certa. E ela esta a 14,90 EUR de distancia.
+**Fecho (frase-bordao):**
+> Tres ou mais destas cenas nao e um sinal de falha. E um sinal de que falta a ferramenta certa. **Quando o dia deixa de ser ouvido e passa a ser visto, tudo muda** — e ela esta a 14,90 EUR de distancia.
 
 *Nota: este material nao substitui acompanhamento profissional especializado.*
 
@@ -218,14 +255,15 @@ Para quando um imprevisto quebrou o dia e e preciso voltar ao eixo em 3 passos. 
 
 **Nome:** Catarina Azevedo
 
-**Bio:**
-Sou a Catarina Azevedo e crio conteudos educativos para pais e cuidadores de criancas autistas.
+**Bio (reposicionada — sem credenciais que nao existem):**
 
-Este checklist nao saiu de livros. Saiu da observacao real de como criancas no espectro respondem quando a rotina deixa de ser uma ordem falada e passa a ser um mapa visivel.
+Sou a Catarina Azevedo. Crio conteudos educativos voltados para o apoio de pais e cuidadores de criancas autistas.
 
-Criei o material que gostaria de ter tido nas maos ha uns anos atras — simples, sem termos clinicos, para aplicar ja amanha de manha sem precisar de formacao nenhuma.
+Este material nao nasceu de um livro academico nem de uma sala de aula. Nasceu de uma necessidade real: a de ver o dia organizado numa folha simples, sem termos clinicos, sem 80 paginas para ler — uma folha que uma familia inteira possa consultar em dez segundos no frigorifico.
 
-**Missao:** Dar a maes e pais uma ferramenta concreta, acessivel e imediata — nao mais um livro para acumular no telemovel.
+A minha missao e simples: dar a maes e pais uma ferramenta concreta, acessivel e imediata. Nao mais um livro para acumular no telemovel. Nao mais um curso para deixar na metade. Uma folha que se imprime hoje e se usa amanha.
+
+O peso deste material nao esta em mim. Esta no que ele respeita: o modo como o cerebro no espectro realmente processa o dia. E isso, os estudos internacionais ja mostram ha anos.
 
 ---
 
@@ -235,9 +273,13 @@ Criei o material que gostaria de ter tido nas maos ha uns anos atras — simples
 
 **Headline:** Por 14,90 EUR, a rotina inteira organizada — e ainda o bonus de som
 
-**Texto acima do timer:** Esta condicao expira em:
+**[URGENCIA REAL — substitui timer falso]**
 
-**[TIMER 10:00 — reseta por sessao]**
+**Caixa de urgencia honesta:**
+> **Oferta de lancamento valida ate 30 de abril de 2026.**
+> Depois desta data, o pacote volta ao valor cheio de **48,90 EUR**.
+>
+> **As primeiras 100 compras levam o BONUS Playlists Spotify.** A partir da compra n.o 101, o bonus sai do pacote — fica so o checklist.
 
 **O que entra no pacote:**
 - [X] Checklist Mestre do Dia Inteiro (PDF) — valor 14,00 EUR
@@ -245,8 +287,8 @@ Criei o material que gostaria de ter tido nas maos ha uns anos atras — simples
 - [X] Checklist das Transicoes (PDF) — valor 5,00 EUR
 - [X] Checklist da Noite e do Sono (PDF) — valor 5,00 EUR
 - [X] Guia Rapido para Dias Dificeis (PDF) — bonus pratico
-- [X] BONUS: Kit Playlists para Rotina e Calmaria (Spotify: Foco / Conexao / Sono) — valor 19,90 EUR
-- [X] Acesso imediato por e-mail + garantia incondicional de 15 dias
+- [X] BONUS: Kit Playlists para Rotina e Calmaria (Spotify: Foco / Conexao / Sono) — valor 19,90 EUR *(so para as 100 primeiras compras)*
+- [X] Acesso imediato por e-mail + garantia de 15 dias pra sentir a diferenca
 
 ~~Valor total do pacote: 48,90 EUR~~
 
@@ -255,11 +297,13 @@ Criei o material que gostaria de ter tido nas maos ha uns anos atras — simples
 
 **CTA:** QUERO LEVAR TUDO POR 14,90 EUR
 
-**Micro-texto:** Acesso imediato - Download em PDF - Playlists Spotify gratuitas - Pagamento seguro via Hotmart
+**Micro-texto:** Acesso imediato - Download em PDF - Playlists Spotify gratuitas (100 primeiras) - Pagamento seguro via Hotmart
 
 ---
 
-## SECAO 11 — GARANTIA
+## SECAO 11 — GARANTIA (com nome proprio)
+
+**Selo:** **Garantia 15 Dias Pra Sentir a Diferenca**
 
 **Headline:** 15 dias para testar. Se nao sentir diferenca, o valor volta — integralmente.
 
@@ -269,7 +313,7 @@ A verdade em cima da mesa: quem imprime o checklist hoje, aplica durante uma sem
 Nao e so se nao funcionar. E se simplesmente nao gostar. Todo o risco fica deste lado. O unico compromisso do outro lado e tentar durante 7 dias.
 
 **Caixa destacada:**
-> O pior cenario possivel e receber 14,90 EUR de volta. O melhor cenario e uma primeira manha em meses em que o pequeno-almoco acontece antes do primeiro "nao".
+> O pior cenario possivel e receber 14,90 EUR de volta. O melhor cenario e uma primeira manha em meses em que o pequeno-almoco acontece antes do primeiro "nao". Por isso este selo chama-se simplesmente **Garantia Pra Sentir a Diferenca** — porque o compromisso nao e acreditar, e sentir.
 
 ---
 
@@ -280,20 +324,32 @@ Nao e so se nao funcionar. E se simplesmente nao gostar. Todo o risco fica deste
 **P: "Ja tenho dezenas de dicas e posts guardados. Isto nao vai ser mais do mesmo?"**
 R: Nao. Os posts guardados sao conselhos soltos — este e um sistema pronto. A diferenca e que os posts pedem que se monte a rotina do zero; o checklist ja entrega a rotina montada, pronta a imprimir e colar. Deixa de existir a arquiteta do dia. Passa a existir apenas a aplicadora.
 
+**P: "Ja experimentei agenda visual antes e nao funcionou. Porque e que este seria diferente?"**
+R: A maior parte das agendas visuais falha por um de tres motivos: sao genericas demais (nao cobrem o momento certo do dia), obrigam a mae a construir tudo do zero (e o tempo nao existe), ou vivem no telemovel (onde a crianca nao as ve). Este checklist foi pensado ao contrario: folhas especificas por momento critico (manha, transicoes, noite, dias dificeis), prontas a imprimir, para viver no frigorifico. A agenda deixa de depender da memoria da mae — passa a depender da parede.
+
+**P: "Em que formato chega? Imprime-se em casa? Que tamanho?"**
+R: Chega em PDF por e-mail, pronto para imprimir em qualquer impressora caseira em tamanho A4. Tambem funciona no telemovel ou no tablet, caso prefira consultar no ecra. Nao precisa de software especial, nao precisa de instalacao, nao precisa de formacao. Abre, imprime, cola no frigorifico.
+
+**P: "Serve para uma crianca de 3 anos? E para um adolescente?"**
+R: Sim, para ambos os extremos da faixa 2-12. Criancas mais pequenas seguem pelos pictogramas coloridos ao lado de cada passo (reconhecem a imagem antes de reconhecer a palavra). Criancas maiores leem os passos diretamente. Nao existe uma idade certa para ter uma rotina visivel — existe a fase em que cada crianca esta. Para adolescentes acima dos 12, os Checklists de Transicoes e de Dias Dificeis continuam a fazer sentido; o Checklist Mestre pode precisar de adaptacao.
+
 **P: "Nem tenho tempo de aplicar mais nada. Isto tambem vai ficar guardado no telemovel?"**
 R: E exatamente por isso que o formato e folha para imprimir. Uma vez impressa, fica colada no frigorifico ou no quarto. A partir desse momento, nao depende mais da memoria de ninguem. E o checklist que trabalha.
 
-**P: "O meu filho e muito novo / mais velho / severo / leve. Isto vai servir?"**
-R: Sim. O checklist e visual e adaptavel. Criancas mais pequenas seguem por imagens, maiores ja conseguem ler os passos. Adapta-se a velocidade a fase dela. Nao existe "idade certa" para ter uma rotina visivel.
+**P: "Tenho mais de um filho. Serve para os dois?"**
+R: Sim. A licenca e por familia, nao por crianca — imprime quantas vezes precisar. E ha um bonus lateral: o irmao neurotipico tambem beneficia de ter a rotina a vista, porque a previsibilidade ajuda toda a casa, nao so a crianca no espectro.
+
+**P: "E se a rotina muda de casa? Pai separado, avos, ATL?"**
+R: Imprime as folhas necessarias e entrega uma copia em cada casa onde a crianca passa tempo. A estrutura visual viaja com ela. Essa continuidade entre casas e um dos ganhos mais subestimados deste formato impresso.
 
 **P: "Isto substitui a terapeuta?"**
 R: Absolutamente nao. Este material e um apoio pratico para o dia a dia em casa. Nao substitui acompanhamento medico, psicologico, terapeutico ou pedagogico — complementa. O que a terapeuta recomenda ganha muito mais forca quando ha uma estrutura visual em casa para sustentar.
 
 **P: "E se eu aplicar e nao ver diferenca logo na primeira semana?"**
-R: Ha 15 dias de garantia total para devolver e receber o valor de volta. Na pratica, os primeiros sinais costumam aparecer nos 2 ou 3 primeiros dias — normalmente uma manha menos tensa ou uma transicao que correu sem choro. Os maiores resultados sao cumulativos e vem com consistencia ao longo das semanas.
+R: Ha 15 dias de Garantia Pra Sentir a Diferenca para devolver e receber o valor de volta. Na pratica, os primeiros sinais costumam aparecer nos 2 ou 3 primeiros dias — normalmente uma manha menos tensa ou uma transicao que correu sem choro. Os maiores resultados sao cumulativos e vem com consistencia ao longo das semanas.
 
 **P: "Por que 14,90 EUR e nao mais caro?"**
-R: Nada em falta. O preco e promocional de lancamento porque o objetivo e chegar a muitas familias — nao fazer barreira. O valor cheio do pacote (48,90 EUR) e o preco que sera praticado quando o lancamento terminar.
+R: Nada em falta. O preco e promocional de lancamento (valido ate 30 de abril de 2026) porque o objetivo e chegar a muitas familias — nao fazer barreira. O valor cheio do pacote (48,90 EUR) e o preco que sera praticado a partir de 1 de maio de 2026.
 
 **P: "As playlists do bonus tem finalidade terapeutica?"**
 R: Nao. Sao um recurso complementar de ambiente, pensadas para ajudar a criar momentos mais calmos em casa. Nao tem finalidade medica nem substituem qualquer tratamento.
@@ -312,15 +368,18 @@ R: Assim que o pagamento e confirmado pela Hotmart, chega ao e-mail o link para 
 **Corpo:**
 Fechar esta pagina agora e acordar amanha para o mesmo calcado voando pelo ar, para a mesma transicao em crise, para a mesma noite de negociacao na porta do quarto. Esse filme ja e conhecido.
 
-Ou investir 14,90 EUR — menos do que um jantar fora — imprimir as folhas hoje a noite e dar a crianca uma coisa simples que ela ainda nao teve: a possibilidade de antecipar o dia com os proprios olhos.
+Ou investir 14,90 EUR — menos do que um jantar fora, menos do que um livro de parentalidade que vai ficar fechado — imprimir as folhas hoje a noite e dar a crianca uma coisa simples que ela ainda nao teve: a possibilidade de antecipar o dia com os proprios olhos.
 
-Ha 15 dias de garantia total. Se nao servir, o valor volta — cada cent. Nao existe cenario em que se sai a perder.
+Ha 15 dias de Garantia Pra Sentir a Diferenca. Se nao servir, o valor volta — cada cent. Nao existe cenario em que se sai a perder.
 
-Uma manha em que o pequeno-almoco acontece antes do primeiro "nao". Uma transicao de parque para carro sem segurar a respiracao. A hora do banho que nao comeca com negociacao. Um domingo a tarde em que ninguem chora. Isso e o que cabe dentro de uma folha impressa.
+**Caixa destacada (frase-bordao + visao do depois):**
+> Uma manha em que o pequeno-almoco acontece antes do primeiro "nao". Uma transicao de parque para carro sem segurar a respiracao. A hora do banho que nao comeca com negociacao. Um domingo a tarde em que ninguem chora.
+>
+> **Quando o dia deixa de ser ouvido e passa a ser visto, tudo muda.** Isso e o que cabe dentro de uma folha impressa.
 
 **CTA:** QUERO A MANHA DE AMANHA DIFERENTE
 
-**Micro-texto:** 14,90 EUR - Acesso imediato - Garantia de 15 dias - Pagamento seguro via Hotmart
+**Micro-texto:** 14,90 EUR - Acesso imediato - Garantia 15 dias pra sentir a diferenca - Pagamento seguro via Hotmart - Oferta valida ate 30 de abril de 2026
 
 ---
 
@@ -328,6 +387,8 @@ Uma manha em que o pequeno-almoco acontece antes do primeiro "nao". Uma transica
 
 **Disclaimer legal:**
 Este material e um guia pratico de apoio a rotina familiar. Nao substitui acompanhamento terapeutico, psicologico, pedagogico ou medico. Cada crianca tem o seu ritmo e as suas necessidades individuais. Em caso de duvidas clinicas, consulte sempre um profissional qualificado.
+
+As estatisticas citadas nesta pagina sao referencias gerais de investigacao internacional sobre Transtorno do Espectro do Autismo (TEA) e stress parental. Fontes: Journal of Autism and Developmental Disorders (Springer, 2025); Autism Research Institute; National Clearinghouse on Autism Evidence and Practice; International Journal of Developmental Disabilities (2024); estudo ASDEU (Frontiers in Psychiatry, 2023); estudo populacional nos Acores (Current Psychology, 2025).
 
 **Marca:** Catarina Azevedo
 **Links:** Politica de Privacidade | Termos de Uso
