@@ -224,9 +224,154 @@
     .timer { font-size: 32px; padding: 12px 20px; }
     .price-new { font-size: 34px; }
   }
+
+  /* ===== Seção comparadora de versões de promessa ===== */
+  .versions-wrap {
+    max-width: 1240px;
+    margin: 0 auto 40px;
+  }
+  .versions-banner {
+    text-align: center;
+    background: linear-gradient(135deg, #2e2a3a 0%, #5d4e95 100%);
+    color: #fff;
+    padding: 22px 24px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(93, 78, 149, 0.25);
+  }
+  .versions-banner h2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .versions-banner p {
+    font-size: 14px;
+    opacity: 0.85;
+    color: #fff;
+    margin: 0;
+  }
+  .versions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .version-card {
+    background: #fff;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 26px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .version-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+  }
+  .version-card.v1 { background: linear-gradient(180deg, #fff 0%, #faf7f2 100%); }
+  .version-card.v2 { background: linear-gradient(180deg, #fff 0%, #f0ebfa 100%); }
+  .version-card.v3 { background: linear-gradient(180deg, #fff 0%, #e8f5ee 100%); }
+  .version-badge {
+    position: absolute;
+    top: -12px;
+    left: 22px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(124, 106, 180, 0.3);
+  }
+  .version-card.v1 .version-badge { background: var(--primary); }
+  .version-card.v2 .version-badge { background: #5d4e95; }
+  .version-card.v3 .version-badge { background: var(--success); }
+  .version-angle {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .version-prehead {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+  .version-h1 {
+    font-size: 22px;
+    line-height: 1.22;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.4px;
+    margin-bottom: 14px;
+  }
+  .version-sub {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .versions-grid { grid-template-columns: 1fr; }
+    .version-h1 { font-size: 20px; }
+    .versions-banner h2 { font-size: 18px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ============================================ -->
+<!-- SEÇÃO COMPARADORA — 3 VERSÕES DE PROMESSA    -->
+<!-- ============================================ -->
+<div class="versions-wrap">
+  <div class="versions-banner">
+    <h2>3 versões da promessa para comparar — escolhe a tua favorita</h2>
+    <p>Cada versão testa um gancho diferente no hero. A página abaixo mostra a Versão 1 aplicada.</p>
+  </div>
+
+  <div class="versions-grid">
+
+    <!-- VERSÃO 1 — Contraste + prazo + tangibilidade -->
+    <div class="version-card v1">
+      <div class="version-badge">Versão 1</div>
+      <div class="version-angle">Ângulo: Contraste caos → rotina + prazo + folha física</div>
+      <div class="version-prehead">Para famílias que vivem o dia a dia com uma criança no espectro</div>
+      <h3 class="version-h1">Do caos das manhãs à rotina possível — em 7 dias, com uma folha impressa.</h3>
+      <p class="version-sub">Sem mais um livro para ler. Sem mais um curso para assistir. Um checklist visual pronto para imprimir hoje e aplicar já amanhã — desenhado para a forma como o cérebro no espectro realmente funciona.</p>
+    </div>
+
+    <!-- VERSÃO 2 — Mecanismo único: previsibilidade visual -->
+    <div class="version-card v2">
+      <div class="version-badge">Versão 2</div>
+      <div class="version-angle">Ângulo: Mecanismo único (previsibilidade visual) como gancho</div>
+      <div class="version-prehead">Para famílias que procuram uma ferramenta, não mais um livro</div>
+      <h3 class="version-h1">O idioma que o seu filho já lê — mesmo antes de saber ler uma única palavra.</h3>
+      <p class="version-sub">Uma criança no espectro não precisa de mais explicações faladas. Precisa de ver o dia. Este checklist traduz a rotina inteira numa linguagem visual que o cérebro dela processa sozinho — e que baixa a ansiedade antes da crise começar.</p>
+    </div>
+
+    <!-- VERSÃO 3 — Cena sensorial futura específica -->
+    <div class="version-card v3">
+      <div class="version-badge">Versão 3</div>
+      <div class="version-angle">Ângulo: Uma cena futura concreta como headline</div>
+      <div class="version-prehead">Para muitas mães de crianças no espectro, esta cena ainda não aconteceu este ano</div>
+      <h3 class="version-h1">A primeira manhã em meses em que o pequeno-almoço acontece antes do primeiro "não".</h3>
+      <p class="version-sub">Não é sorte. É uma folha colada no frigorífico que a criança consegue seguir com os próprios olhos — desenhada para respeitar a forma como o cérebro no espectro antecipa o dia.</p>
+    </div>
+
+  </div>
+</div>
 
 <div class="container">
 

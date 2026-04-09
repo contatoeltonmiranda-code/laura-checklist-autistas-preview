@@ -1,5 +1,47 @@
 # Copy v1 — LP Checklist Diario para Criancas Autistas (TEMPERATURA ELEVADA)
 
+## Variações de Promessa (para escolha)
+
+Tres angulos diferentes para a mesma promessa central. Cada versao testa um gancho distinto no hero. Escolher UMA antes de prosseguir para producao final.
+
+---
+
+### Versao 1 — Contraste "caos -> rotina" + prazo + tangibilidade (ATUAL / ja aprovada como base)
+
+**Angulo:** Before/After comprimido + prazo curto (7 dias) + objeto fisico concreto (folha impressa).
+
+**Sobre-headline:** Para familias que vivem o dia a dia com uma crianca no espectro
+
+**H1:** Do caos das manhas a rotina possivel — em 7 dias, com uma folha impressa.
+
+**Subheadline:** Sem mais um livro para ler. Sem mais um curso para assistir. Um checklist visual pronto para imprimir hoje e aplicar ja amanha — desenhado para a forma como o cerebro no espectro realmente funciona.
+
+---
+
+### Versao 2 — Mecanismo unico como gancho (Previsibilidade Visual)
+
+**Angulo:** Abrir com o DIFERENCIAL do produto (nao com a dor nem com o prazo). Posicionar "previsibilidade visual" como um idioma que a crianca ja sabe ler — e que o adulto ainda nao aprendeu a escrever.
+
+**Sobre-headline:** Para familias que procuram uma ferramenta, nao mais um livro
+
+**H1:** O idioma que o seu filho ja le — mesmo antes de saber ler uma unica palavra.
+
+**Subheadline:** Uma crianca no espectro nao precisa de mais explicacoes faladas. Precisa de ver o dia. Este checklist traduz a rotina inteira numa linguagem visual que o cerebro dela processa sozinho — e que baixa a ansiedade antes da crise comecar.
+
+---
+
+### Versao 3 — Cena sensorial futura especifica (uma unica imagem viva)
+
+**Angulo:** Uma unica cena concreta do futuro como headline, sem explicacao de mecanismo nem promessa abstrata. A copy deixa a imagem fazer o trabalho emocional sozinha — e a subheadline entrega o "como".
+
+**Sobre-headline:** Para muitas maes de criancas no espectro, esta cena ainda nao aconteceu este ano
+
+**H1:** A primeira manha em meses em que o pequeno-almoco acontece antes do primeiro "nao".
+
+**Subheadline:** Nao e sorte. E uma folha colada no frigorifico que a crianca consegue seguir com os proprios olhos — desenhada para respeitar a forma como o cerebro no espectro antecipa o dia.
+
+---
+
 **Data:** 2026-04-09 (v1.2 — revisao AGRESSIVA emocional, Meta-safe)
 **Framework:** BAB (Before-After-Bridge) + especificidade cirurgica (micro-cenas viscerais)
 **Tom:** Comercial, visceral, com mordida — dor especifica, desejo ardente, zero violacao Meta
