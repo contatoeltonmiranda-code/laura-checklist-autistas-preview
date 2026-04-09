@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System PRO — Cosmic Calm Premium</title>
+<meta name="description" content="Showcase visual do Design System PRO criado para a LP Laura — dark cósmico azul, mesclando o melhor de 4 referências.">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  /* Overrides só do showcase (não afetam a LP) */
+  .ds-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,14,39,0.85); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1rem 0;
+  }
+  .ds-nav__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-px-mobile);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .ds-nav__brand {
+    font: 700 1.125rem/1 var(--font-display);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .ds-nav__brand span { color: var(--cyan-glow); }
+  .ds-nav__links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .ds-nav__links a {
+    font: 500 var(--text-xs)/1 var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-muted);
+  }
+  .ds-nav__links a:hover { color: var(--cyan-glow); }
+
+  .ds-hero {
+    padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 6vw, 6rem);
+    background: var(--gradient-hero-bg);
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .ds-hero::before {
+    content:''; position:absolute; inset:0;
+    background-image: repeating-linear-gradient(-35deg, transparent 0 40px, rgba(96,165,250,0.04) 40px 42px);
+    pointer-events:none;
+  }
+  .ds-hero__inner { max-width: 880px; margin:0 auto; padding: 0 var(--container-px-mobile); position:relative; }
+  .ds-hero__eyebrow {
+    display: inline-flex; align-items:center; gap:.5rem;
+    font: 500 var(--text-xs)/1 var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--cyan-glow);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-normal);
+    border-radius: var(--radius-full);
+    background: rgba(96,165,250,0.06);
+    margin-bottom: 2rem;
+  }
+  .ds-hero__eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background: var(--cyan-glow); box-shadow: 0 0 12px var(--cyan-glow); }
+  .ds-hero h1 {
+    font: 700 var(--text-hero)/0.95 var(--font-display);
+    letter-spacing: -0.035em;
+    background: linear-gradient(135deg, #FFFFFF 0%, #60A5FA 50%, #8B5CF6 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 1.25rem;
+  }
+  .ds-hero__sub {
+    font: 400 var(--text-lg)/1.55 var(--font-body);
+    color: var(--text-body); max-width: 680px; margin: 0 auto 2rem;
+  }
+  .ds-hero__meta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font: 500 var(--text-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); }
+  .ds-hero__meta span { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); background: rgba(96,165,250,0.03); }
+
+  .ds-section {
+    padding: clamp(4rem, 7vw, 7rem) 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .ds-section--alt { background: var(--bg-secondary); }
+  .ds-section__inner { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-px-mobile); }
+  @media (min-width:768px){ .ds-section__inner { padding: 0 var(--container-px-desktop);} }
+  .ds-section__head { margin-bottom: 3rem; }
+  .ds-section__eyebrow {
+    font: 500 var(--text-xs)/1 var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--cyan-glow); margin-bottom: 0.75rem;
+  }
+  .ds-section__title {
+    font: 700 var(--text-4xl)/1.05 var(--font-display);
+    letter-spacing: -0.025em;
+    color: var(--text-primary); margin-bottom: .75rem;
+  }
+  .ds-section__desc { font: 400 var(--text-base)/1.65 var(--font-body); color: var(--text-muted); max-width: 720px; }
+
+  /* Palette swatches */
+  .swatch-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .swatch {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    transition: transform .3s, border-color .3s;
+  }
+  .swatch:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+  .swatch__color { height: 120px; position: relative; }
+  .swatch__color::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.25) 100%);
+    pointer-events: none;
+  }
+  .swatch__meta { padding: 1rem 1.25rem; }
+  .swatch__name { font: 600 var(--text-sm)/1.2 var(--font-display); color: var(--text-primary); margin-bottom: .3rem; }
+  .swatch__hex { font: 500 var(--text-xs)/1 var(--font-mono); color: var(--cyan-glow); text-transform: uppercase; letter-spacing: 0.06em; }
+  .swatch__use { font: 400 var(--text-xs)/1.4 var(--font-body); color: var(--text-muted); margin-top: .5rem; }
+
+  /* Typography demo */
+  .type-list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .type-item { padding: 2rem 0; border-top: 1px solid var(--border-subtle); display: grid; gap: .5rem; }
+  .type-item:first-child { border-top: 0; padding-top: 0; }
+  .type-label { font: 500 var(--text-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); }
+  .type-meta { font: 400 var(--text-xs)/1.4 var(--font-mono); color: var(--text-faint); }
+  .type-sample--hero { font: 700 var(--text-hero)/0.95 var(--font-display); letter-spacing: -0.035em; color: var(--text-primary); }
+  .type-sample--h1 { font: 700 var(--text-5xl)/1 var(--font-display); letter-spacing: -0.03em; color: var(--text-primary); }
+  .type-sample--h2 { font: 700 var(--text-4xl)/1.05 var(--font-display); letter-spacing: -0.025em; color: var(--text-primary); }
+  .type-sample--h3 { font: 600 var(--text-2xl)/1.1 var(--font-display); color: var(--text-primary); }
+  .type-sample--lead { font: 500 var(--text-lg)/1.5 var(--font-body); color: var(--text-body); }
+  .type-sample--body { font: 400 var(--text-base)/1.65 var(--font-body); color: var(--text-body); max-width: 65ch; }
+  .type-sample--eyebrow { font: 500 var(--text-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.18em; color: var(--cyan-glow); }
+  .type-sample--quote { font: 600 var(--text-3xl)/1.2 var(--font-serif); font-style: italic; color: var(--cyan-glow); max-width: 700px; }
+
+  /* Button showcase */
+  .btn-row { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: .625rem;
+    background: var(--gradient-cta);
+    color: white;
+    font: 600 var(--text-base)/1 var(--font-body);
+    padding: 1.125rem 2.25rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-cta);
+    position: relative; overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    text-transform: none; letter-spacing: 0;
+  }
+  .btn-primary::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: translateX(-150%);
+    transition: transform .6s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 24px 64px -12px rgba(99,102,241,0.7); }
+  .btn-primary:hover::before { transform: translateX(150%); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: .625rem;
+    background: transparent; color: var(--cyan-glow);
+    font: 600 var(--text-base)/1 var(--font-body);
+    padding: 1.125rem 2rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    transition: background .3s, border-color .3s;
+  }
+  .btn-secondary:hover { background: rgba(96,165,250,0.08); border-color: var(--cyan-glow); }
+  @keyframes pulse-glow {
+    0%,100% { box-shadow: 0 16px 48px -12px rgba(99,102,241,0.6); }
+    50%     { box-shadow: 0 24px 72px -8px rgba(139,92,246,0.9); }
+  }
+  .btn-primary.is-pulsing { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+  /* Card showcase */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .card-glow {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    position: relative;
+    transition: border-color .3s, transform .3s;
+  }
+  .card-glow::before {
+    content: ''; position: absolute; inset: -1px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: var(--gradient-border-glow);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity .4s;
+    pointer-events: none;
+  }
+  .card-glow:hover { transform: translateY(-4px); border-color: transparent; }
+  .card-glow:hover::before { opacity: 1; }
+  .card-glow__icon {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--gradient-cta);
+    display: grid; place-items: center;
+    box-shadow: 0 12px 32px -8px rgba(99,102,241,0.5);
+    color: white; font: 700 1.125rem/1 var(--font-display);
+    margin-bottom: 1.25rem;
+  }
+  .card-glow h3 { font: 600 var(--text-xl)/1.2 var(--font-display); color: var(--text-primary); margin-bottom: .625rem; letter-spacing: -0.015em; }
+  .card-glow p { font: 400 var(--text-base)/1.6 var(--font-body); color: var(--text-muted); }
+
+  /* Outline numbers */
+  .outline-numbers { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .outline-number {
+    font: 700 var(--text-6xl)/1 var(--font-display);
+    color: transparent;
+    -webkit-text-stroke: 2px var(--cyan-glow);
+    letter-spacing: -0.05em;
+    opacity: 0.9;
+  }
+
+  /* Layered text decoration */
+  .layered-demo { position: relative; padding: 4rem 0; display: grid; place-items: center; min-height: 260px; }
+  .layered-word {
+    position: absolute;
+    font: 700 clamp(4rem, 10vw, 9rem)/0.85 var(--font-display);
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(96,165,250,0.25);
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .layered-demo__front {
+    position: relative; z-index: 2;
+    font: 700 var(--text-3xl)/1.1 var(--font-display);
+    color: var(--text-primary); text-align: center; max-width: 500px;
+    letter-spacing: -0.02em;
+  }
+
+  /* Countdown ring */
+  .countdown-ring {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(var(--cyan-glow) 0deg, var(--cyan-glow) 270deg, rgba(96,165,250,0.12) 270deg, rgba(96,165,250,0.12) 360deg);
+    display: grid; place-items: center;
+    box-shadow: var(--shadow-glow-blue);
+    position: relative;
+    margin: 0 auto;
+  }
+  .countdown-ring::before {
+    content: ''; position: absolute; inset: 8px;
+    background: var(--bg-primary);
+    border-radius: inherit;
+  }
+  .countdown-ring__num {
+    position: relative;
+    font: 700 clamp(3rem, 6vw, 4rem)/1 var(--font-display);
+    color: white;
+  }
+  .countdown-ring__label {
+    position: relative;
+    font: 500 var(--text-xs)/1 var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--cyan-glow);
+    margin-top: 0.4rem;
+  }
+
+  /* Guarantee badge */
+  .guarantee-badge {
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: var(--gradient-badge-gold);
+    display: grid; place-items: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    font: 700 var(--text-lg)/1.15 var(--font-display);
+    box-shadow: var(--shadow-glow-gold);
+    position: relative;
+    margin: 0 auto;
+  }
+  .guarantee-badge::before {
+    content: ''; position: absolute; inset: -12px;
+    border-radius: inherit;
+    border: 2px dashed rgba(245, 158, 11, 0.45);
+    animation: rotate-slow 40s linear infinite;
+  }
+  @keyframes rotate-slow { to { transform: rotate(360deg); } }
+  .guarantee-badge__num { font: 700 clamp(3rem, 6vw, 4rem)/1 var(--font-display); display: block; margin-bottom: .25rem; }
+  .guarantee-badge__unit { font: 500 .75rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: .75rem; }
+
+  /* Eyebrow showcase */
+  .eyebrow-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font: 500 var(--text-xs)/1 var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--cyan-glow);
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--border-normal);
+    border-radius: var(--radius-full);
+    background: rgba(96,165,250,0.06);
+  }
+  .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan-glow); box-shadow: 0 0 12px var(--cyan-glow); }
+
+  /* Ornate frame */
+  .ornate-frame {
+    position: relative;
+    padding: 3rem 2rem;
+    border: 1px solid var(--border-gold);
+    border-radius: var(--radius-lg);
+    background: rgba(245,158,11,0.04);
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .ornate-frame::before,
+  .ornate-frame::after {
+    content: ''; position: absolute; width: 40px; height: 40px; border: 2px solid var(--gold); pointer-events:none;
+  }
+  .ornate-frame::before { top: -3px; left: -3px; border-right: 0; border-bottom: 0; }
+  .ornate-frame::after  { bottom: -3px; right: -3px; border-left: 0; border-top: 0; }
+  .ornate-frame img { width: 100%; max-width: 260px; margin: 0 auto; }
+
+  /* Velocity lines */
+  .velocity-demo {
+    position: relative;
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+  }
+  .velocity-demo::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(-35deg, transparent 0 40px, rgba(96,165,250,0.08) 40px 42px);
+    pointer-events: none;
+  }
+  .velocity-demo > * { position: relative; }
+  .velocity-demo h4 { font: 700 var(--text-2xl)/1.1 var(--font-display); color: white; margin-bottom: .5rem; }
+  .velocity-demo p { font: 400 var(--text-base)/1.6 var(--font-body); color: var(--text-muted); }
+
+  /* Highlight inline */
+  .highlight {
+    color: var(--cyan-glow); font-weight: 600; position: relative;
+  }
+  .highlight::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
+  }
+
+  /* Stat big numbers */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+  .stat-card {
+    padding: 2rem;
+    background: var(--gradient-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .stat-card__num {
+    font: 700 clamp(3.5rem, 6vw + 1rem, 5.5rem)/1 var(--font-display);
+    background: var(--gradient-number-outline);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    letter-spacing: -0.03em;
+    display: block; margin-bottom: .75rem;
+  }
+  .stat-card__label {
+    font: 400 var(--text-sm)/1.4 var(--font-body);
+    color: var(--text-muted);
+  }
+
+  /* Motion demo placeholder */
+  .motion-note {
+    padding: 1.25rem 1.5rem;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-md);
+    background: rgba(96,165,250,0.04);
+    font: 400 var(--text-sm)/1.55 var(--font-body);
+    color: var(--text-body);
+  }
+  .motion-note strong { color: var(--cyan-glow); font-weight: 600; }
+
+  /* Footer */
+  .ds-footer {
+    padding: 3rem 0 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-primary);
+  }
+  .ds-footer p { font: 400 var(--text-sm)/1.6 var(--font-body); color: var(--text-muted); max-width: 640px; margin: 0 auto 1rem; }
+  .ds-footer a.btn-primary { margin-top: .5rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ds-nav">
+  <div class="ds-nav__inner">
+    <div class="ds-nav__brand">Design System <span>PRO</span></div>
+    <div class="ds-nav__links">
+      <a href="#paleta">Paleta</a>
+      <a href="#tipografia">Tipografia</a>
+      <a href="#botoes">Botões</a>
+      <a href="#cards">Cards</a>
+      <a href="#componentes">Componentes</a>
+      <a href="#motion">Motion</a>
+      <a href="../">LP →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="ds-hero">
+  <div class="ds-hero__inner">
+    <div class="ds-hero__eyebrow">Cosmic Calm Premium · v1</div>
+    <h1>Design System PRO pra LPs que vendem 24h</h1>
+    <p class="ds-hero__sub">Dark cósmico azul validado pela paleta do próprio ebook. Mescla o melhor de 4 referências reais — CTA gradient vivo, glow cards, layered text, countdown ring, guarantee badge ornamentada, alternating sections e motion sistema com <em>reduced-motion</em> gate.</p>
+    <div class="ds-hero__meta">
+      <span>Nicho: Educação parental / Neurodiversidade</span>
+      <span>Ticket: €14,90</span>
+      <span>Canal: Meta Ads</span>
+    </div>
+  </div>
+</header>
+
+<!-- PALETA -->
+<section class="ds-section" id="paleta">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">01 / Paleta</p>
+      <h2 class="ds-section__title">Cores validadas pelo ebook</h2>
+      <p class="ds-section__desc">A base dark vem direto da capa do ebook (azul royal profundo + halo elétrico cósmico). O accent warm (gold + magenta) vem do subtítulo "10 Hábitos" e do glow ao redor da criança. Zero cor inventada — toda decisão tem ancora visual no próprio produto.</p>
+    </div>
+
+    <h3 style="font: 600 var(--text-lg)/1 var(--font-display); color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.01em;">Base dark cósmica</h3>
+    <div class="swatch-grid" style="margin-bottom: 3rem;">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#0A0E27"></div>
+        <div class="swatch__meta"><div class="swatch__name">bg-primary</div><div class="swatch__hex">#0A0E27</div><div class="swatch__use">Fundo principal da página</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#131842"></div>
+        <div class="swatch__meta"><div class="swatch__name">bg-secondary</div><div class="swatch__hex">#131842</div><div class="swatch__use">Seções alternadas</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#1A2050"></div>
+        <div class="swatch__meta"><div class="swatch__name">bg-card</div><div class="swatch__hex">#1A2050</div><div class="swatch__use">Cards padrão</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#252C6B"></div>
+        <div class="swatch__meta"><div class="swatch__name">bg-elevated</div><div class="swatch__hex">#252C6B</div><div class="swatch__use">Cards em destaque / hover</div></div>
+      </div>
+    </div>
+
+    <h3 style="font: 600 var(--text-lg)/1 var(--font-display); color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.01em;">Brand — direto da capa do ebook</h3>
+    <div class="swatch-grid" style="margin-bottom: 3rem;">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#1E40AF"></div>
+        <div class="swatch__meta"><div class="swatch__name">royal-blue</div><div class="swatch__hex">#1E40AF</div><div class="swatch__use">Cor âncora (capa)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#3B82F6"></div>
+        <div class="swatch__meta"><div class="swatch__name">electric-blue</div><div class="swatch__hex">#3B82F6</div><div class="swatch__use">Highlights, links</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#60A5FA"></div>
+        <div class="swatch__meta"><div class="swatch__name">cyan-glow</div><div class="swatch__hex">#60A5FA</div><div class="swatch__use">Halo, borders, glows</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#6366F1"></div>
+        <div class="swatch__meta"><div class="swatch__name">indigo-glow</div><div class="swatch__hex">#6366F1</div><div class="swatch__use">Gradients</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#8B5CF6"></div>
+        <div class="swatch__meta"><div class="swatch__name">violet-deep</div><div class="swatch__hex">#8B5CF6</div><div class="swatch__use">Fim de gradient CTA</div></div>
+      </div>
+    </div>
+
+    <h3 style="font: 600 var(--text-lg)/1 var(--font-display); color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.01em;">Accent warm — do subtítulo "10 Hábitos"</h3>
+    <div class="swatch-grid" style="margin-bottom: 3rem;">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#F59E0B"></div>
+        <div class="swatch__meta"><div class="swatch__name">gold</div><div class="swatch__hex">#F59E0B</div><div class="swatch__use">Garantia, selos, urgência</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#FBBF24"></div>
+        <div class="swatch__meta"><div class="swatch__name">gold-bright</div><div class="swatch__hex">#FBBF24</div><div class="swatch__use">Hover, highlights</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#EC4899"></div>
+        <div class="swatch__meta"><div class="swatch__name">warm-pink</div><div class="swatch__hex">#EC4899</div><div class="swatch__use">Fim de gradient ornamental</div></div>
+      </div>
+    </div>
+
+    <h3 style="font: 600 var(--text-lg)/1 var(--font-display); color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.01em;">Gradients principais</h3>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch__color" style="background: linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)"></div>
+        <div class="swatch__meta"><div class="swatch__name">gradient-cta</div><div class="swatch__hex">blue → indigo → violet</div><div class="swatch__use">Botão primário</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: radial-gradient(ellipse at 50% 0%, #1E40AF 0%, #131842 25%, #0A0E27 60%)"></div>
+        <div class="swatch__meta"><div class="swatch__name">gradient-hero-bg</div><div class="swatch__hex">radial cósmico descendente</div><div class="swatch__use">Hero background</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%)"></div>
+        <div class="swatch__meta"><div class="swatch__name">gradient-badge-gold</div><div class="swatch__hex">gold → pink</div><div class="swatch__use">Guarantee badge</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899)"></div>
+        <div class="swatch__meta"><div class="swatch__name">gradient-border-glow</div><div class="swatch__hex">blue → violet → pink</div><div class="swatch__use">Card border hover</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section class="ds-section ds-section--alt" id="tipografia">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">02 / Tipografia</p>
+      <h2 class="ds-section__title">Quatro fontes, cada uma com função</h2>
+      <p class="ds-section__desc">Space Grotesk como display (peso forte, grotesque moderna), Inter no body (SaaS legibilidade), JetBrains Mono em labels/eyebrows (uppercase tracking wide) e Fraunces italic reservada para pull quotes e frase-bordão — único elemento editorial no meio do dark cósmico.</p>
+    </div>
+    <div class="type-list">
+      <div class="type-item">
+        <div class="type-label">Hero H1 — Space Grotesk 700</div>
+        <div class="type-sample--hero type-sample">Do caos das manhãs à rotina possível</div>
+        <div class="type-meta">clamp(2.25rem, 1.6rem + 3.2vw, 5rem) · letter-spacing -0.035em · line-height 0.95</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Section H2 — Space Grotesk 700</div>
+        <div class="type-sample--h2 type-sample">O custo invisível da rotina sem mapa</div>
+        <div class="type-meta">clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem) · letter-spacing -0.025em</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Sub H3 — Space Grotesk 600</div>
+        <div class="type-sample--h3 type-sample">Porque os apoios visuais funcionam</div>
+        <div class="type-meta">clamp(1.5rem, 1.25rem + 1.25vw, 2.125rem)</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Body lead — Inter 500</div>
+        <p class="type-sample--lead type-sample">Sem mais um livro para ler. Sem mais um curso para assistir. Um checklist visual pronto para imprimir hoje e aplicar já amanhã.</p>
+        <div class="type-meta">clamp(1.125rem, 1rem + 0.625vw, 1.375rem) · line-height 1.5</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Body — Inter 400</div>
+        <p class="type-sample--body type-sample">A ideia de organizar o dia de uma criança no espectro com apoios visuais não nasceu aqui. Ela é uma das práticas mais estudadas na área do autismo nas últimas duas décadas. Três dados que ajudam a compreender porque é que uma folha impressa pode mudar uma casa.</p>
+        <div class="type-meta">clamp(1rem, 0.95rem + 0.25vw, 1.125rem) · line-height 1.65 · max-width 65ch</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Eyebrow — JetBrains Mono 500 uppercase</div>
+        <div class="type-sample--eyebrow type-sample">01 / DOR · PARA FAMÍLIAS QUE VIVEM NO ESPECTRO</div>
+        <div class="type-meta">clamp(0.75rem, 0.7rem + 0.25vw, 0.813rem) · letter-spacing 0.18em</div>
+      </div>
+      <div class="type-item">
+        <div class="type-label">Pull quote — Fraunces 600 italic</div>
+        <p class="type-sample--quote type-sample">"Quando o dia deixa de ser ouvido e passa a ser visto, tudo muda."</p>
+        <div class="type-meta">clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem) · line-height 1.2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTÕES -->
+<section class="ds-section" id="botoes">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">03 / Botões</p>
+      <h2 class="ds-section__title">CTA gradient vivo + shine sweep</h2>
+      <p class="ds-section__desc">O CTA primário é o único elemento com gradient blue→indigo→violet (ref 3 Behance). Passa o mouse pra ver o shine sweep e translate up. O pulse é opcional em CTAs críticos (oferta final).</p>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary">Quero a manhã de amanhã diferente</button>
+      <button class="btn-primary is-pulsing">CTA com pulse glow</button>
+      <button class="btn-secondary">Mostra-me como →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="ds-section ds-section--alt" id="cards">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">04 / Cards</p>
+      <h2 class="ds-section__title">Glow border com gradient animado</h2>
+      <p class="ds-section__desc">Cards padrão com background gradient sutil e border subtle. No hover: translate up + border gradient animado (blue→violet→pink) via mask composite. Feature icon em círculo com gradient individual por card.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card-glow">
+        <div class="card-glow__icon">01</div>
+        <h3>Crises frequentes e difíceis de gerir</h3>
+        <p>Você organiza tudo com carinho, mas pequenos imprevistos acabam gerando crises, choros ou comportamentos difíceis de lidar.</p>
+      </div>
+      <div class="card-glow">
+        <div class="card-glow__icon">02</div>
+        <h3>Falta de rotina e previsibilidade</h3>
+        <p>A ausência de hábitos claros gera ansiedade na criança e desgaste emocional em toda a família.</p>
+      </div>
+      <div class="card-glow">
+        <div class="card-glow__icon">03</div>
+        <h3>Cansaço, culpa e insegurança diária</h3>
+        <p>Sentir que está sempre a errar, mesmo dando o melhor de si, é emocionalmente desgastante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTES DIFERENCIADORES -->
+<section class="ds-section" id="componentes">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">05 / Componentes</p>
+      <h2 class="ds-section__title">Elementos diferenciadores</h2>
+      <p class="ds-section__desc">As 6 peças que fogem do padrão SaaS genérico e dão a assinatura do DS. Cada uma vem de uma referência, recolorida para bater com o ebook.</p>
+    </div>
+
+    <!-- Eyebrows -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Eyebrow consistente (ref 3)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Aparece em TODAS as seções da LP — é o elemento que amarra o sistema. JetBrains Mono uppercase + dot com glow.</p>
+      <div class="eyebrow-row">
+        <div class="eyebrow">01 / Dor</div>
+        <div class="eyebrow">02 / Mecanismo</div>
+        <div class="eyebrow">03 / Evidência</div>
+        <div class="eyebrow">04 / Produto</div>
+        <div class="eyebrow">05 / Oferta</div>
+      </div>
+    </div>
+
+    <!-- Outline numbers -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Outline numbers gigantes (ref 2)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Tipografia como gráfico puro — só contorno. Usa em seções "como funciona" ou listas ordenadas.</p>
+      <div class="outline-numbers">
+        <div class="outline-number">01</div>
+        <div class="outline-number">02</div>
+        <div class="outline-number">03</div>
+        <div class="outline-number">04</div>
+        <div class="outline-number">05</div>
+      </div>
+    </div>
+
+    <!-- Stat big numbers -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Números estatísticos com gradient text</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Prova por dados. Os 3 números reais da LP renderizados como hero de cada card.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-card__num">60%</span>
+          <p class="stat-card__label">das mães de crianças com TEA vivem em stress crónico elevado (Springer 2025)</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">1 de 28</span>
+          <p class="stat-card__label">práticas baseadas em evidência reconhecidas para apoiar TEA (National Clearinghouse)</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">0,5–1%</span>
+          <p class="stat-card__label">das crianças em idade escolar em Portugal estão no espectro (ASDEU 2023)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layered text -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Layered text decoration (ref 1)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Palavra-âncora gigante em outline ciano atrás da foto/mockup — storytelling visual, não decoração vazia.</p>
+      <div class="layered-demo">
+        <div class="layered-word">CALMA</div>
+        <p class="layered-demo__front">A palavra que resume o que a mãe busca fica no fundo como promessa silenciosa.</p>
+      </div>
+    </div>
+
+    <!-- Countdown + Guarantee side by side -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 4rem; align-items: center;">
+      <div>
+        <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Countdown ring (ref 1+2)</h3>
+        <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.5rem;">Urgência protagonista. Conic-gradient + glow azul elétrico + número gigante Space Grotesk.</p>
+        <div class="countdown-ring">
+          <div>
+            <div class="countdown-ring__num">07</div>
+            <div class="countdown-ring__label">dias restantes</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Guarantee badge (ref 3)</h3>
+        <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.5rem;">Selo circular com gradient gold→magenta + dashed ring rotacionando em loop lento (40s).</p>
+        <div class="guarantee-badge">
+          <div>
+            <span class="guarantee-badge__num">15</span>
+            <span class="guarantee-badge__unit">dias</span>
+            <div>para sentir a diferença</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ornate frame -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Ornate frame dourado (ref 4 adaptada)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Cantos ornamentais gold em volta do mockup do ebook — vibe "relíquia premium" sem ser vintage.</p>
+      <div class="ornate-frame">
+        <img src="../assets/images/ebook-mockup.png" alt="Mockup do ebook Checklist Diário para Crianças Autistas">
+      </div>
+    </div>
+
+    <!-- Velocity lines -->
+    <div style="margin-bottom: 4rem;">
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Velocity lines (ref 1 adaptada)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Linhas diagonais sutis em ciano — feel "speed premium" em seções de urgência.</p>
+      <div class="velocity-demo">
+        <h4>Oferta válida até 30 de abril de 2026</h4>
+        <p>Depois desta data, o preço promocional <span class="highlight">€14,90</span> volta aos <span class="highlight">€48,90</span> originais.</p>
+      </div>
+    </div>
+
+    <!-- Highlight inline -->
+    <div>
+      <h3 style="font: 600 var(--text-xl)/1.1 var(--font-display); color: var(--text-primary); margin-bottom: .5rem;">Highlight inline gradient (ref 2)</h3>
+      <p style="font: 400 var(--text-sm)/1.55 var(--font-body); color: var(--text-muted); margin-bottom: 1.25rem;">Palavras críticas no meio do parágrafo destacadas sem caixa — só underline gradient.</p>
+      <p style="font: 400 var(--text-lg)/1.6 var(--font-body); color: var(--text-body); max-width: 65ch;">Uma criança no espectro não precisa de <span class="highlight">mais explicações faladas</span>. Precisa de <span class="highlight">ver o dia</span>. Este checklist traduz a rotina inteira numa linguagem visual que o cérebro dela processa sozinho.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION -->
+<section class="ds-section ds-section--alt" id="motion">
+  <div class="ds-section__inner">
+    <div class="ds-section__head">
+      <p class="ds-section__eyebrow">06 / Motion</p>
+      <h2 class="ds-section__title">Movimento com freio</h2>
+      <p class="ds-section__desc">Smooth, sem exagero. Zero bounce, spring ou overshoot. Transições padrão 300ms ease-out. <code style="font: 500 var(--text-sm)/1 var(--font-mono); color: var(--cyan-glow); background: rgba(96,165,250,0.1); padding: .15rem .5rem; border-radius: 4px;">prefers-reduced-motion</code> respeitado via gate JS.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+      <div class="motion-note"><strong>Reveal on scroll</strong> — fade + translateY 24px, 800ms ease-out, trigger via IntersectionObserver a 15% de visibilidade.</div>
+      <div class="motion-note"><strong>Glow pulse</strong> — aplicado só em CTAs críticos. Box-shadow oscilando entre 60% e 90% de opacidade, ciclo 2.5s.</div>
+      <div class="motion-note"><strong>Shine sweep</strong> — gradient branco 20% atravessa o botão em 600ms no hover.</div>
+      <div class="motion-note"><strong>Card border glow</strong> — opacity 0→1 do gradient border no hover, 400ms.</div>
+      <div class="motion-note"><strong>Hover translate</strong> — cards sobem 4px, botões 2px, transição 300ms.</div>
+      <div class="motion-note"><strong>Rotate slow</strong> — dashed ring da guarantee badge gira 360° em 40s loop infinito.</div>
+      <div class="motion-note"><strong>Countdown JS</strong> — atualiza a cada 1s quando entra no viewport, com fallback se <code style="font: 500 var(--text-xs)/1 var(--font-mono); color: var(--gold-bright);">prefers-reduced-motion</code>.</div>
+      <div class="motion-note"><strong>Gate motion</strong> — classe <code style="font: 500 var(--text-xs)/1 var(--font-mono); color: var(--gold-bright);">html.js-motion</code> só é adicionada se usuário não pediu reduced motion. CSS gateia tudo por ela.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ds-footer">
+  <p>Este é o design system PRO consolidado das 4 referências + paleta do ebook. A LP da Laura foi construída em cima dele. Se aprovar o DS, a LP é a aplicação prática.</p>
+  <p style="margin-bottom: 2rem;">Documento técnico em markdown: <code style="font: 500 var(--text-sm)/1 var(--font-mono); color: var(--cyan-glow); background: rgba(96,165,250,0.08); padding: .2rem .5rem; border-radius: 4px;">design-system-pro.md</code></p>
+  <a href="../" class="btn-primary">Ver a LP aplicando este DS →</a>
+</footer>
+
+</body>
+</html>
