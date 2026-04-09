@@ -1,10 +1,14 @@
 // ============================================
-// Checklist Diário — interações leves
+// Checklist Diario — E-Ink / Paper
+// Zero motion by default, respeita prefers-reduced-motion
 // ============================================
 (function () {
   'use strict';
 
-  // Nav scrolled state
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Nav scrolled state + sticky CTA mobile
   const nav = document.querySelector('.nav');
   const stickyCTA = document.querySelector('.sticky-cta');
   const hero = document.querySelector('.hero');
@@ -16,8 +20,7 @@
       nav && nav.classList.remove('scrolled');
     }
 
-    // sticky CTA mobile aparece quando o usuário rolou o suficiente
-    // (gatilho na metade do hero ou 500px, o que vier primeiro)
+    // Sticky CTA mobile — aparece a partir de 500px OU meio do hero
     if (stickyCTA && hero) {
       const heroHeight = hero.offsetHeight;
       const trigger = Math.min(heroHeight * 0.55, 500);
@@ -31,8 +34,11 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
+  // Scroll reveal — SO se motion permitido E IO suportado
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    // Ativa o modo motion adicionando classe ao html (CSS gateia por essa classe)
+    document.documentElement.classList.add('js-motion');
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,7 +51,6 @@
       { threshold: 0.08, rootMargin: '0px 0px 10% 0px' }
     );
     document.querySelectorAll('.reveal').forEach((el) => {
-      // Elementos já visíveis no carregamento — revelar imediatamente
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add('visible');
@@ -53,11 +58,17 @@
         io.observe(el);
       }
     });
-  } else {
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
-  }
 
-  // Smooth scroll para âncoras (fallback caso smooth-scroll do CSS falhe)
+    // Safety: depois de 1.5s, tudo visivel (se scroll nao disparou)
+    setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
+        el.classList.add('visible');
+      });
+    }, 1500);
+  }
+  // Se reduced-motion: CSS ja mantem tudo visivel, nada a fazer.
+
+  // Smooth scroll para ancoras — instantaneo se reduced-motion
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
@@ -66,12 +77,13 @@
       if (target) {
         e.preventDefault();
         const top = target.getBoundingClientRect().top + window.scrollY - 16;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({
+          top,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
       }
     });
   });
 
-  // FAQ: fechar os outros ao abrir um (accordion single-open opcional)
-  // Deixar múltiplos abertos ao mesmo tempo é mais amigável em LPs,
-  // então NÃO forçamos single-open. Comentário mantido por referência.
+  // FAQ: multi-open permitido (user control, e-reader feel)
 })();
