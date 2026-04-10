@@ -70,7 +70,7 @@
   --text-4xl:  clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
   --text-5xl:  clamp(2.75rem, 2rem + 3.75vw, 4.75rem);
   --text-6xl:  clamp(3.5rem, 2.5rem + 5vw, 6rem);
-  --text-hero: clamp(2.25rem, 1.6rem + 3.2vw, 5rem);
+  --text-hero: clamp(1.75rem, 1rem + 2vw, 2.75rem);
   --text-mega: clamp(4rem, 2.5rem + 8vw, 10rem);
 
   /* Layout */
