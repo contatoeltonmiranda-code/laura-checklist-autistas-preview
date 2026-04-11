@@ -1124,13 +1124,13 @@ p + p { margin-top: 1rem; }
   color: var(--text-body);
   line-height: 1.65;
 }
-/* Gradient transparente nos cards */
+/* Gradient transparente nos cards — ímpares lado direito, pares lado esquerdo */
 .zigzag__card--grad-right::after {
   content: '';
   position: absolute;
   top: 0; right: 0;
-  width: 40%; height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.04) 60%, rgba(139,92,246,0.06) 100%);
+  width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.08) 50%, rgba(139,92,246,0.12) 80%, transparent 100%);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   pointer-events: none;
 }
@@ -1138,29 +1138,29 @@ p + p { margin-top: 1rem; }
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 40%; height: 100%;
-  background: linear-gradient(270deg, transparent 0%, rgba(99,102,241,0.04) 60%, rgba(139,92,246,0.06) 100%);
+  width: 45%; height: 100%;
+  background: linear-gradient(270deg, transparent 0%, rgba(99,102,241,0.08) 50%, rgba(139,92,246,0.12) 80%, transparent 100%);
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   pointer-events: none;
 }
 /* Ebook sobreposto na borda */
 .zigzag__ebook {
   flex-shrink: 0;
-  width: 180px;
+  width: 260px;
   filter: drop-shadow(0 12px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.25));
   z-index: 2;
 }
 .zigzag__ebook--right {
-  margin-right: -5rem;
+  margin-right: -7rem;
   margin-left: 1rem;
-  margin-top: -2rem;
-  margin-bottom: -2rem;
+  margin-top: -3rem;
+  margin-bottom: -3rem;
 }
 .zigzag__ebook--left {
-  margin-left: -5rem;
+  margin-left: -7rem;
   margin-right: 1rem;
-  margin-top: -2rem;
-  margin-bottom: -2rem;
+  margin-top: -3rem;
+  margin-bottom: -3rem;
 }
 /* Odd/even row positioning */
 @media (min-width: 768px) {
