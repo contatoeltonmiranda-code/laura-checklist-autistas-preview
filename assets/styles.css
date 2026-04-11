@@ -155,9 +155,9 @@ a:hover { color: var(--gold-bright); }
 }
 @media (min-width: 900px) {
   .mec-card__visual {
-    margin-left: -160px;
-    margin-top: -3rem;
-    margin-bottom: -3rem;
+    margin-left: -200px;
+    margin-top: -4rem;
+    margin-bottom: -4rem;
   }
 }
 .mec-card__layered {
@@ -177,7 +177,7 @@ a:hover { color: var(--gold-bright); }
 .mec-card__img {
   position: relative;
   z-index: 1;
-  max-width: 380px;
+  max-width: 500px;
   width: 100%;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(59,130,246,0.3));
 }
