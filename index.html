@@ -87,33 +87,41 @@
       <p>Aqui fica uma verdade que não sai nas consultas: o problema <strong>não é falta de amor</strong> nem falta de esforço. É falta de <span class="highlight">estrutura visível</span> — uma que o cérebro da criança consiga seguir sem precisar que alguém explique <strong>dez vezes por dia</strong> o que vem a seguir.</p>
     </div>
 
-    <!-- Layout orbital: mockup central + cards ao redor -->
-    <div class="orbital">
-      <div class="orbital__card orbital__card--left-top reveal">
-        <div class="orbital__icon">01</div>
-        <div class="orbital__text">
-          <h3>A manhã que começa no escuro</h3>
-          <p>Acordar com o coração apertado antes mesmo de abrir a porta do quarto dele. Saber, sem precisar de olhar o relógio, que os próximos 40 minutos vão ser uma negociação por cada meia — por cada colher — por cada passo até à porta.</p>
+    <!-- Layout orbital animado: ebook central + cards girando -->
+    <div class="orbit-scene">
+      <div class="orbit-scene__center">
+        <img src="assets/images/ebook-mockup.png" alt="Checklist Diário para Crianças Autistas" class="orbit-scene__mockup" loading="lazy">
+      </div>
+      <svg class="orbit-scene__ring" viewBox="0 0 700 700" fill="none" aria-hidden="true">
+        <circle cx="350" cy="350" r="320" stroke="rgba(96,165,250,0.15)" stroke-width="1.5" stroke-dasharray="8 8"/>
+      </svg>
+      <div class="orbit-scene__track">
+        <div class="orbit-scene__card" style="--angle: 0deg;">
+          <div class="orbit-scene__card-inner">
+            <div class="orbital__icon">01</div>
+            <div class="orbital__text">
+              <h3>A manhã que começa no escuro</h3>
+              <p>Acordar com o coração apertado antes mesmo de abrir a porta do quarto dele. Saber, sem precisar de olhar o relógio, que os próximos 40 minutos vão ser uma negociação por cada meia — por cada colher — por cada passo até à porta.</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="orbital__card orbital__card--right-top reveal">
-        <div class="orbital__icon">02</div>
-        <div class="orbital__text">
-          <h3>A padaria que estava fechada</h3>
-          <p>A padaria do costume estava fechada. Aquilo que parecia um detalhe virou 40 minutos no chão do passeio. Um imprevisto de 10 segundos custa uma tarde inteira. E amanhã a memória já está no corpo antes mesmo de saber que vai acontecer.</p>
+        <div class="orbit-scene__card" style="--angle: 120deg;">
+          <div class="orbit-scene__card-inner">
+            <div class="orbital__icon">02</div>
+            <div class="orbital__text">
+              <h3>A padaria que estava fechada</h3>
+              <p>A padaria do costume estava fechada. Aquilo que parecia um detalhe virou 40 minutos no chão do passeio. Um imprevisto de 10 segundos custa uma tarde inteira. E amanhã a memória já está no corpo antes mesmo de saber que vai acontecer.</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="orbital__center reveal">
-        <img src="assets/images/ebook-mockup.png" alt="Checklist Diário para Crianças Autistas — mockup do ebook" class="orbital__mockup" loading="lazy">
-      </div>
-
-      <div class="orbital__card orbital__card--bottom reveal">
-        <div class="orbital__icon">03</div>
-        <div class="orbital__text">
-          <h3>A pergunta que ninguém faz em voz alta</h3>
-          <p>A pergunta que aparece às 3 da manhã, quando a casa finalmente dorme: <em>e se eu estiver a piorar tudo sem perceber?</em> Ela não aparece nas consultas. Ela aparece no teto do quarto, em silêncio, e fica lá até o alarme tocar.</p>
+        <div class="orbit-scene__card" style="--angle: 240deg;">
+          <div class="orbit-scene__card-inner">
+            <div class="orbital__icon">03</div>
+            <div class="orbital__text">
+              <h3>A pergunta que ninguém faz em voz alta</h3>
+              <p>A pergunta que aparece às 3 da manhã, quando a casa finalmente dorme: <em>e se eu estiver a piorar tudo sem perceber?</em> Ela não aparece nas consultas. Ela aparece no teto do quarto, em silêncio, e fica lá até o alarme tocar.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
