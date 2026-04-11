@@ -1027,39 +1027,38 @@ p + p { margin-top: 1rem; }
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: center;
+  max-width: 780px;
 }
 @media (min-width: 768px) {
   .zigzag__row {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     gap: 0;
+    position: relative;
   }
   .zigzag__row--reverse {
-    grid-template-columns: 1fr auto;
-  }
-  .zigzag__row--reverse .zigzag__num {
-    order: 2;
-    text-align: left;
-    padding-left: 2rem;
-    padding-right: 0;
-  }
-  .zigzag__row--reverse .zigzag__card {
-    order: 1;
+    margin-left: auto;
   }
 }
 .zigzag__num {
-  font: 700 clamp(5rem, 10vw, 9rem)/0.85 var(--font-display);
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(96, 165, 250, 0.3);
+  position: absolute;
+  bottom: -0.5rem; right: -1rem;
+  font: 700 clamp(5rem, 10vw, 8rem)/0.85 var(--font-display);
+  color: rgba(255, 255, 255, 0.04);
   letter-spacing: -0.05em;
-  padding-right: 2rem;
   user-select: none;
-  text-align: right;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 767px) {
+  .zigzag__num { position: static; color: rgba(255,255,255,0.06); }
 }
 .zigzag__card {
+  position: relative;
+  z-index: 1;
   background: var(--gradient-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 2rem 2.5rem;
+  padding: 1.75rem 2rem;
   transition: border-color .3s, transform .3s;
 }
 .zigzag__card:hover {
