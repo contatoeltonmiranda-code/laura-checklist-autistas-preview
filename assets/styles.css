@@ -1612,65 +1612,58 @@ p + p { margin-top: 1rem; }
 }
 @media (min-width: 900px) { .guarantee-grid { grid-template-columns: 280px 1fr; gap: 4rem; } }
 
-/* Guarantee animated seal */
-.guarantee-seal {
+/* Guarantee stamp — rotating text around dark circle */
+.guarantee-stamp {
   position: relative;
-  width: 240px; height: 240px;
+  width: 220px; height: 220px;
   margin: 0 auto;
 }
-.guarantee-seal__ring {
+.guarantee-stamp__text {
   position: absolute;
-  border-radius: 50%;
-}
-.guarantee-seal__ring--outer {
   inset: 0;
-  border: 1.5px solid rgba(245,158,11,0.2);
-  animation: seal-spin 60s linear infinite;
+  width: 100%; height: 100%;
+  animation: stamp-rotate 25s linear infinite;
 }
-.guarantee-seal__ring--dashed {
-  inset: 10px;
-  border: 2px dashed var(--gold);
-  opacity: 0.5;
-  animation: seal-spin-reverse 40s linear infinite;
+.guarantee-stamp__text text {
+  font: 700 0.75rem/1 var(--font-mono);
+  fill: var(--cyan-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
-@keyframes seal-spin { to { transform: rotate(360deg); } }
-@keyframes seal-spin-reverse { to { transform: rotate(-360deg); } }
+@keyframes stamp-rotate { to { transform: rotate(360deg); } }
 
-.guarantee-seal__circle {
+.guarantee-stamp__center {
   position: absolute;
-  inset: 22px;
+  inset: 28px;
   border-radius: 50%;
-  background: var(--gradient-badge-gold);
+  background: radial-gradient(circle, #1A2050 0%, #0A0E27 100%);
+  border: 2px solid var(--border-normal);
   display: grid;
   place-items: center;
   place-content: center;
   text-align: center;
-  color: white;
-  box-shadow: var(--shadow-glow-gold), inset 0 -8px 24px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.4), 0 0 48px rgba(96,165,250,0.1);
 }
-.guarantee-seal__num {
-  font: 800 clamp(2.5rem, 5vw, 3.5rem)/1 var(--font-display);
+.guarantee-stamp__num {
+  font: 800 clamp(3rem, 6vw, 4.5rem)/1 var(--font-display);
   display: block;
   letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.guarantee-seal__label {
+.guarantee-stamp__label {
   font: 700 var(--text-lg)/1 var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
   display: block;
-  margin-top: 0.15rem;
-}
-.guarantee-seal__sub {
-  font: 500 var(--text-xs)/1.3 var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: block;
-  margin-top: 0.5rem;
-  opacity: 0.9;
+  margin-top: 0.25rem;
+  background: linear-gradient(180deg, #E2E8F0 0%, #64748B 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (prefers-reduced-motion: reduce) {
-  .guarantee-seal__ring--outer,
-  .guarantee-seal__ring--dashed { animation: none; }
+  .guarantee-stamp__text { animation: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .guarantee-badge::before { animation: none; }
