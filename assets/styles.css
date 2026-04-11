@@ -624,6 +624,25 @@ p + p { margin-top: 1rem; }
 .section-head--center { text-align: center; }
 .section-head--center h2 { max-width: 700px; margin-inline: auto; }
 
+/* ---------- 7g. BORDER TOP + BOTTOM GRADIENT ---------- */
+.section--border-top-bottom::before,
+.section--border-top-bottom::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 3;
+}
+.section--border-top-bottom::before {
+  top: 0;
+  background: linear-gradient(90deg, transparent 5%, rgba(96,165,250,0.5) 30%, rgba(96,165,250,0.5) 70%, transparent 95%);
+}
+.section--border-top-bottom::after {
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 5%, rgba(96,165,250,0.5) 30%, rgba(96,165,250,0.5) 70%, transparent 95%);
+}
+
 /* ---------- 7f. BORDER LEFT GRADIENT ---------- */
 .section--border-left::before {
   content: '';
