@@ -236,7 +236,11 @@ h1 {
   word-break: normal;
   hyphens: none;
 }
-h2 { font-size: var(--text-4xl); line-height: 1.05; letter-spacing: -0.025em; font-weight: 700; }
+h2 {
+  font-size: var(--text-4xl); line-height: 1.05; letter-spacing: -0.025em; font-weight: 700;
+  background: linear-gradient(135deg, #FFFFFF 0%, #60A5FA 60%, #8B5CF6 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
 h3 { font-size: var(--text-2xl); line-height: 1.1; letter-spacing: -0.015em; font-weight: 600; }
 h4 { font-size: var(--text-xl); line-height: 1.2; font-weight: 600; }
 p { margin: 0; }
@@ -262,6 +266,7 @@ p + p { margin-top: 1rem; }
   background: var(--cyan-glow);
   box-shadow: 0 0 12px var(--cyan-glow);
 }
+.eyebrow--no-dot::before { display: none; }
 
 .highlight {
   color: var(--cyan-glow);
