@@ -1507,16 +1507,56 @@ p + p { margin-top: 1rem; }
   position: relative;
   z-index: 2;
 }
-/* Glows nos cantos */
+/* Meia lua brilhante no topo */
+.section--offer .offer__card {
+  position: relative;
+}
 .section--offer .offer__card::before {
   content: '';
   position: absolute;
-  top: -200px; left: 50%;
+  top: -80px; left: 50%;
   transform: translateX(-50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(59,130,246,0.15) 0%, transparent 70%);
+  width: 700px; height: 160px;
+  background: radial-gradient(ellipse 350px 80px at 50% 100%, rgba(96,165,250,0.35) 0%, rgba(99,102,241,0.15) 40%, transparent 70%);
   pointer-events: none;
   z-index: -1;
+  border-radius: 50%;
+}
+
+/* ---------- 16b. COUNTDOWN TIMER ---------- */
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+.countdown-timer__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  min-width: 72px;
+}
+.countdown-timer__num {
+  font: 700 clamp(1.5rem, 3vw, 2.25rem)/1 var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.countdown-timer__label {
+  font: 500 var(--text-xs)/1 var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
+}
+.countdown-timer__sep {
+  font: 700 1.5rem/1 var(--font-display);
+  color: var(--cyan-glow);
+  margin-top: -1rem;
 }
 
 /* ---------- 17. OFFER ---------- */

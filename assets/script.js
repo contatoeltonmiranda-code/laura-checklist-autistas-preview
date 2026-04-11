@@ -68,28 +68,32 @@
     }, { passive: true });
   }
 
-  // ---------- Countdown até 30 Abril 2026 ----------
-  const countdownEl = document.querySelector('[data-countdown]');
-  if (countdownEl) {
+  // ---------- Countdown até 30 Abril 2026 (dias, horas, min, seg) ----------
+  const ctDays = document.getElementById('ct-days');
+  const ctHours = document.getElementById('ct-hours');
+  const ctMins = document.getElementById('ct-mins');
+  const ctSecs = document.getElementById('ct-secs');
+  if (ctDays) {
     const deadline = new Date('2026-04-30T23:59:59').getTime();
-    const numEl = countdownEl.querySelector('.countdown-ring__num');
-    const labelEl = countdownEl.querySelector('.countdown-ring__label');
-
-    const updateCountdown = () => {
-      const now = Date.now();
-      const diff = deadline - now;
+    const pad = (n) => String(n).padStart(2, '0');
+    const updateTimer = () => {
+      const diff = deadline - Date.now();
       if (diff <= 0) {
-        if (numEl) numEl.textContent = '0';
-        if (labelEl) labelEl.textContent = 'Encerrado';
+        ctDays.textContent = '00'; ctHours.textContent = '00';
+        ctMins.textContent = '00'; ctSecs.textContent = '00';
         return;
       }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      if (numEl) numEl.textContent = String(days);
-      if (labelEl) labelEl.textContent = days === 1 ? 'Dia restante' : 'Dias restantes';
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      ctDays.textContent = pad(d);
+      ctHours.textContent = pad(h);
+      ctMins.textContent = pad(m);
+      ctSecs.textContent = pad(s);
     };
-    updateCountdown();
-    // Atualiza a cada hora (suficiente para contagem de dias)
-    setInterval(updateCountdown, 60 * 60 * 1000);
+    updateTimer();
+    setInterval(updateTimer, 1000);
   }
 
   // ---------- Pulse no CTA crítico da oferta ----------
