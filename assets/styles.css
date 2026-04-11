@@ -1143,24 +1143,20 @@ p + p { margin-top: 1rem; }
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   pointer-events: none;
 }
-/* Ebook sobreposto na borda */
+/* Ebook sobreposto na borda — absolute pra não afetar altura do card */
 .zigzag__ebook {
-  flex-shrink: 0;
-  width: 260px;
+  position: absolute;
+  width: 300px;
   filter: drop-shadow(0 12px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.25));
   z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .zigzag__ebook--right {
-  margin-right: -7rem;
-  margin-left: 1rem;
-  margin-top: -3rem;
-  margin-bottom: -3rem;
+  right: -5rem;
 }
 .zigzag__ebook--left {
-  margin-left: -7rem;
-  margin-right: 1rem;
-  margin-top: -3rem;
-  margin-bottom: -3rem;
+  left: -5rem;
 }
 /* Odd/even row positioning */
 @media (min-width: 768px) {
