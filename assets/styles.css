@@ -1173,10 +1173,10 @@ p + p { margin-top: 1rem; }
   transform: translateY(-50%);
 }
 .zigzag__ebook--right {
-  right: -12rem;
+  right: -10.5rem;
 }
 .zigzag__ebook--left {
-  left: -12rem;
+  left: -10.5rem;
 }
 /* Odd/even row positioning */
 @media (min-width: 768px) {
