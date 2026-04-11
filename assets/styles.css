@@ -1023,7 +1023,7 @@ p + p { margin-top: 1rem; }
   margin-bottom: 0 !important;
 }
 .section--produto-compact .product__grid {
-  margin-top: 0 !important;
+  margin-top: -3rem !important;
 }
 .section--produto-compact .product__body {
   padding-top: 0 !important;
