@@ -121,6 +121,7 @@ a:hover { color: var(--gold-bright); }
   overflow: hidden;
 }
 .section--alt { background: var(--bg-secondary); }
+.section--rounded { border-radius: 150px; }
 .section--hero {
   background: var(--gradient-hero-bg);
   padding-block: clamp(2.5rem, 4vw + 1rem, 5rem) clamp(2rem, 3vw + 1rem, 4rem);
