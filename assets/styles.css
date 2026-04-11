@@ -273,7 +273,7 @@ p + p { margin-top: 1rem; }
 }
 .pull-quote strong { color: var(--text-primary); }
 
-.section-head { max-width: 760px; margin-bottom: 3rem; }
+.section-head { max-width: 760px; margin-bottom: 1.5rem; }
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-head p { margin-top: 1rem; color: var(--text-body); font-size: var(--text-lg); }
 
