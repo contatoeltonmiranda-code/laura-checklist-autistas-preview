@@ -1016,7 +1016,7 @@ p + p { margin-top: 1rem; }
   margin-top: -1rem;
 }
 @media (min-width: 900px) {
-  .product__grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; }
+  .product__grid { grid-template-columns: 1.1fr 1fr; gap: 2rem; }
   .product__grid--reversed .product__body { order: 1; }
   .product__grid--reversed .product__visual { order: 2; }
 }
@@ -1043,7 +1043,7 @@ p + p { margin-top: 1rem; }
   list-style: none;
   display: grid;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 .pillar {
   display: grid;
