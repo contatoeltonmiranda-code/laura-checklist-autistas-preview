@@ -1094,7 +1094,7 @@ p + p { margin-top: 1rem; }
 .zigzag {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 4rem;
   margin-top: 3rem;
 }
 .zigzag__row {
@@ -1166,17 +1166,17 @@ p + p { margin-top: 1rem; }
 /* Ebook sobreposto na borda — absolute pra não afetar altura do card */
 .zigzag__ebook {
   position: absolute;
-  width: 300px;
+  width: 220px;
   filter: drop-shadow(0 12px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.25));
   z-index: 2;
   top: 50%;
   transform: translateY(-50%);
 }
 .zigzag__ebook--right {
-  right: -5rem;
+  right: -6rem;
 }
 .zigzag__ebook--left {
-  left: -5rem;
+  left: -6rem;
 }
 /* Odd/even row positioning */
 @media (min-width: 768px) {
