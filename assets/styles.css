@@ -484,7 +484,7 @@ p + p { margin-top: 1rem; }
   .orbital__card--left-top  { grid-column: 1; grid-row: 1; }
   .orbital__card--right-top { grid-column: 3; grid-row: 1; }
   .orbital__center          { grid-column: 2; grid-row: 1 / 3; }
-  .orbital__card--bottom    { grid-column: 2; grid-row: 2; }
+  .orbital__card--bottom    { grid-column: 2; grid-row: 2; margin-top: 2rem; }
 }
 .orbital__center {
   display: grid;
