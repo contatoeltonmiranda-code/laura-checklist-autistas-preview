@@ -203,11 +203,14 @@ a:hover { color: var(--gold-bright); }
 }
 .mec-card__item {
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   align-items: flex-start;
   padding: 1rem 0;
   border-bottom: 1px solid var(--border-subtle);
 }
+.mec-card__item .mini-chart-top { width: 100%; }
+.mec-card__item .ev-item__arrow + div { flex: 1; }
 .mec-card__item:last-child { border-bottom: none; }
 .mec-card__item h4 { font-size: var(--text-sm); margin-bottom: 0.35rem; color: var(--text-primary); }
 .mec-card__item p { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.5; }
@@ -215,13 +218,7 @@ a:hover { color: var(--gold-bright); }
 .mini-chart-top {
   flex-shrink: 0;
   display: grid;
-  place-items: center;
-}
-.mec-card__item {
-  flex-wrap: wrap;
-}
-.mini-chart-top {
-  width: 100%;
+  place-items: start;
   margin-bottom: 0.5rem;
 }
 .section--hero {
@@ -1025,36 +1022,38 @@ p + p { margin-top: 1rem; }
 .zigzag__row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
   max-width: 780px;
 }
 @media (min-width: 768px) {
   .zigzag__row {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
     gap: 0;
-    position: relative;
   }
   .zigzag__row--reverse {
+    grid-template-columns: 1fr auto;
     margin-left: auto;
+  }
+  .zigzag__row--reverse .zigzag__num {
+    order: 2;
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+  .zigzag__row--reverse .zigzag__card {
+    order: 1;
   }
 }
 .zigzag__num {
-  position: absolute;
-  bottom: -0.5rem; right: -1rem;
-  font: 700 clamp(5rem, 10vw, 8rem)/0.85 var(--font-display);
-  color: rgba(255, 255, 255, 0.04);
+  font: 700 clamp(4rem, 8vw, 6rem)/0.85 var(--font-display);
+  color: rgba(255, 255, 255, 0.06);
   letter-spacing: -0.05em;
+  padding-right: 1.5rem;
   user-select: none;
-  pointer-events: none;
-  z-index: 0;
-}
-@media (max-width: 767px) {
-  .zigzag__num { position: static; color: rgba(255,255,255,0.06); }
+  text-align: right;
 }
 .zigzag__card {
-  position: relative;
-  z-index: 1;
   background: var(--gradient-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
