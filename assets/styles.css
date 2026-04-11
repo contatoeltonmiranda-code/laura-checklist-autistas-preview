@@ -211,6 +211,7 @@ a:hover { color: var(--gold-bright); }
 .mec-card__item > div:last-child { flex: 1; }
 .mec-chart-icon {
   flex-shrink: 0;
+  align-self: flex-start;
 }
 .pillar-icon {
   flex-shrink: 0;
@@ -1048,19 +1049,6 @@ p + p { margin-top: 1rem; }
     grid-template-columns: auto 1fr;
     gap: 0;
   }
-  .zigzag__row--reverse {
-    grid-template-columns: 1fr auto;
-    margin-left: auto;
-  }
-  .zigzag__row--reverse .zigzag__num {
-    order: 2;
-    text-align: left;
-    padding-left: 1.5rem;
-    padding-right: 0;
-  }
-  .zigzag__row--reverse .zigzag__card {
-    order: 1;
-  }
 }
 .zigzag__num {
   font: 700 clamp(4rem, 8vw, 6rem)/0.85 var(--font-display);
@@ -1071,25 +1059,86 @@ p + p { margin-top: 1rem; }
   text-align: right;
 }
 .zigzag__card {
+  position: relative;
+  display: flex;
+  align-items: center;
   background: var(--gradient-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 1.75rem 2rem;
   transition: border-color .3s, transform .3s;
+  overflow: visible;
 }
 .zigzag__card:hover {
   border-color: var(--border-strong);
   transform: translateY(-3px);
 }
-.zigzag__card h3 {
+.zigzag__card-text { flex: 1; position: relative; z-index: 1; }
+.zigzag__card-text h3 {
   font-size: var(--text-xl);
   margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
-.zigzag__card p {
+.zigzag__card-text p {
   font-size: var(--text-base);
   color: var(--text-body);
   line-height: 1.65;
+}
+/* Gradient transparente nos cards */
+.zigzag__card--grad-right::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 35%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.1) 40%, rgba(139,92,246,0.15) 100%);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  pointer-events: none;
+}
+.zigzag__card--grad-left::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 35%; height: 100%;
+  background: linear-gradient(270deg, transparent 0%, rgba(99,102,241,0.1) 40%, rgba(139,92,246,0.15) 100%);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  pointer-events: none;
+}
+/* Ebook sobreposto na borda */
+.zigzag__ebook {
+  flex-shrink: 0;
+  width: 120px;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.25));
+  z-index: 2;
+}
+.zigzag__ebook--right {
+  margin-right: -3rem;
+  margin-left: 1rem;
+}
+.zigzag__ebook--left {
+  margin-left: -3rem;
+  margin-right: 1rem;
+}
+/* Odd/even row positioning */
+@media (min-width: 768px) {
+  .zigzag__row--odd {
+    grid-template-columns: auto 1fr;
+  }
+  .zigzag__row--even {
+    grid-template-columns: 1fr auto;
+    margin-left: auto;
+  }
+  .zigzag__row--even .zigzag__num {
+    order: 2;
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+  .zigzag__row--even .zigzag__card {
+    order: 1;
+  }
+}
+@media (max-width: 767px) {
+  .zigzag__ebook { display: none; }
 }
 
 .inside__footer {
