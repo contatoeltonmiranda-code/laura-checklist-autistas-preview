@@ -434,66 +434,75 @@
 <!-- ============ 10. OFERTA ============ -->
 <section class="section section--offer" id="oferta">
   <div class="container">
-    <div class="offer__card reveal">
-      <div class="offer__card-head" style="text-align: center; margin-bottom: 1.5rem;">
+    <div class="offer__split reveal">
+      <!-- Coluna esquerda: lista -->
+      <div class="offer__left">
         <span class="eyebrow">Tudo o que entra no pacote de hoje</span>
-        <h2 style="margin-top: 1rem;">Por 14,90 € a <span class="accent-grad">rotina inteira organizada</span> — e ainda o bónus de som</h2>
-      </div>
-      <div class="offer__urgency">
-        <strong>Oferta de lançamento válida até 30 de abril de 2026.</strong><br>
-        Depois desta data, o pacote volta ao valor cheio de <strong>48,90 €</strong>.<br>
-        <strong>As primeiras 100 compras levam o BÓNUS Playlists Spotify.</strong> A partir da compra n.º 101, o bónus sai do pacote — fica só o checklist.
+        <h2 style="margin-top: 1rem;">Por 14,90 € a <span class="accent-grad">rotina inteira organizada</span></h2>
+
+        <div class="offer__urgency">
+          <strong>Oferta válida até 30 de abril de 2026.</strong><br>
+          Depois, o pacote volta a <strong>48,90 €</strong>.<br>
+          <strong>100 primeiras compras levam o BÓNUS Playlists.</strong>
+        </div>
+
+        <ul class="offer__stack">
+          <li>Checklist Mestre do Dia Inteiro (PDF) <span class="stack-val">14,00 €</span></li>
+          <li>Checklist da Manhã (PDF) <span class="stack-val">5,00 €</span></li>
+          <li>Checklist das Transições (PDF) <span class="stack-val">5,00 €</span></li>
+          <li>Checklist da Noite e do Sono (PDF) <span class="stack-val">5,00 €</span></li>
+          <li>Guia Rápido para Dias Difíceis (PDF) <span class="stack-val">Bónus</span></li>
+          <li class="is-bonus">BÓNUS: Kit Playlists Spotify <span class="stack-val">19,90 €</span></li>
+          <li>Acesso imediato + garantia 15 dias <span class="stack-val">Incluso</span></li>
+        </ul>
       </div>
 
-      <ul class="offer__stack">
-        <li>Checklist Mestre do Dia Inteiro (PDF) <span class="stack-val">14,00 €</span></li>
-        <li>Checklist da Manhã (PDF) <span class="stack-val">5,00 €</span></li>
-        <li>Checklist das Transições (PDF) <span class="stack-val">5,00 €</span></li>
-        <li>Checklist da Noite e do Sono (PDF) <span class="stack-val">5,00 €</span></li>
-        <li>Guia Rápido para Dias Difíceis (PDF) <span class="stack-val">Bónus prático</span></li>
-        <li class="is-bonus">BÓNUS: Kit Playlists para Rotina e Calmaria (Spotify: Foco / Conexão / Sono) <span class="stack-val">19,90 €</span></li>
-        <li>Acesso imediato por e-mail + garantia de 15 dias pra sentir a diferença <span class="stack-val">Incluso</span></li>
-      </ul>
+      <!-- Coluna direita: preço + CTA -->
+      <div class="offer__right">
+        <img src="assets/images/ebook-mockup.png" alt="Checklist Diário para Crianças Autistas" class="offer__right-mockup" loading="lazy">
 
-      <div class="offer__countdown">
-        <div class="countdown-timer" id="countdown-timer">
-          <div class="countdown-timer__block">
-            <span class="countdown-timer__num" id="ct-days">19</span>
-            <span class="countdown-timer__label">Dias</span>
-          </div>
-          <span class="countdown-timer__sep">:</span>
-          <div class="countdown-timer__block">
-            <span class="countdown-timer__num" id="ct-hours">00</span>
-            <span class="countdown-timer__label">Horas</span>
-          </div>
-          <span class="countdown-timer__sep">:</span>
-          <div class="countdown-timer__block">
-            <span class="countdown-timer__num" id="ct-mins">00</span>
-            <span class="countdown-timer__label">Min</span>
-          </div>
-          <span class="countdown-timer__sep">:</span>
-          <div class="countdown-timer__block">
-            <span class="countdown-timer__num" id="ct-secs">00</span>
-            <span class="countdown-timer__label">Seg</span>
+        <div class="offer__countdown">
+          <div class="countdown-timer" id="countdown-timer">
+            <div class="countdown-timer__block">
+              <span class="countdown-timer__num" id="ct-days">19</span>
+              <span class="countdown-timer__label">Dias</span>
+            </div>
+            <span class="countdown-timer__sep">:</span>
+            <div class="countdown-timer__block">
+              <span class="countdown-timer__num" id="ct-hours">00</span>
+              <span class="countdown-timer__label">Horas</span>
+            </div>
+            <span class="countdown-timer__sep">:</span>
+            <div class="countdown-timer__block">
+              <span class="countdown-timer__num" id="ct-mins">00</span>
+              <span class="countdown-timer__label">Min</span>
+            </div>
+            <span class="countdown-timer__sep">:</span>
+            <div class="countdown-timer__block">
+              <span class="countdown-timer__num" id="ct-secs">00</span>
+              <span class="countdown-timer__label">Seg</span>
+            </div>
           </div>
         </div>
+
+        <p class="offer__old">De <del>48,90 €</del></p>
+        <div class="offer__price">
+          <span class="offer__price__label">Hoje por</span>
+          <span class="offer__price__big">14,90 €</span>
+        </div>
+
+        <a href="#checkout" class="btn btn-primary btn-lg btn-block is-pulsing" data-pulse>
+          Quero levar tudo por 14,90 €
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <p class="offer__micro">
+          Acesso imediato · PDF · Playlists Spotify (100 primeiras) · Hotmart
+        </p>
       </div>
+    </div>
 
-      <p class="offer__old">Valor total do pacote: 48,90 €</p>
-      <div class="offer__price">
-        <span class="offer__price__label">Hoje por</span>
-        <span class="offer__price__big">14,90 €</span>
-        <span class="offer__price__note">Pagamento único · Sem mensalidades · Sem renovações</span>
-      </div>
-
-      <a href="#checkout" class="btn btn-primary btn-lg btn-block is-pulsing" data-pulse>
-        Quero levar tudo por 14,90 €
-        <span class="btn-arrow" aria-hidden="true">→</span>
-      </a>
-
-      <p class="offer__micro">
-        Acesso imediato · Download em PDF · Playlists Spotify gratuitas (100 primeiras) · Pagamento seguro via Hotmart
-      </p>
+    <div class="offer__card reveal" style="display: none;">
     </div>
 
     <!-- Bónus card -->

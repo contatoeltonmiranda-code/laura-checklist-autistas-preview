@@ -1523,6 +1523,46 @@ p + p { margin-top: 1rem; }
   border-radius: 50%;
 }
 
+/* ---------- 16a. OFFER SPLIT LAYOUT ---------- */
+.offer__split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .offer__split {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+  }
+}
+.offer__left .eyebrow { margin-bottom: 0.75rem; }
+.offer__left h2 { margin-bottom: 1.25rem; }
+.offer__right {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.offer__right::after {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--cyan-glow), var(--indigo-glow), var(--gold));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+.offer__right-mockup {
+  width: 180px;
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.3));
+}
+
 /* ---------- 16b. COUNTDOWN TIMER ---------- */
 .countdown-timer {
   display: flex;
@@ -1776,13 +1816,23 @@ p + p { margin-top: 1rem; }
 .guarantee__body p { color: var(--text-body); margin-bottom: 1rem; line-height: 1.65; }
 .guarantee__note {
   margin-top: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(245, 158, 11, 0.05);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  font-size: var(--text-base);
-  color: var(--text-primary);
+  padding: 1.5rem 2rem;
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--text-body);
   font-style: italic;
+  position: relative;
+  overflow: hidden;
+}
+.guarantee__note::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 35%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.08) 50%, rgba(139,92,246,0.12) 80%, transparent 100%);
+  pointer-events: none;
 }
 
 /* ---------- 19. BONUS CARD ---------- */
