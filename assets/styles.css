@@ -1304,6 +1304,61 @@ p + p { margin-top: 1rem; }
   line-height: 1.7;
 }
 
+/* ---------- 17. OFFER BACKGROUND ---------- */
+.section--offer {
+  background: var(--bg-primary);
+  padding-block: clamp(2.5rem, 4vw + 1rem, 5rem) clamp(2rem, 3vw + 1rem, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+.section--offer::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: -20%;
+  width: 60%; height: 160%;
+  background: repeating-linear-gradient(
+    -35deg,
+    transparent 0px,
+    transparent 30px,
+    rgba(30, 64, 175, 0.12) 30px,
+    rgba(30, 64, 175, 0.12) 32px
+  );
+  transform: rotate(-5deg);
+  pointer-events: none;
+  z-index: 0;
+}
+.section--offer::after {
+  content: '';
+  position: absolute;
+  top: -30%; right: -20%;
+  width: 60%; height: 160%;
+  background: repeating-linear-gradient(
+    35deg,
+    transparent 0px,
+    transparent 30px,
+    rgba(99, 102, 241, 0.1) 30px,
+    rgba(99, 102, 241, 0.1) 32px
+  );
+  transform: rotate(5deg);
+  pointer-events: none;
+  z-index: 0;
+}
+.section--offer .container {
+  position: relative;
+  z-index: 2;
+}
+/* Glows nos cantos */
+.section--offer .offer__card::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(59,130,246,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ---------- 17. OFFER ---------- */
 .offer__card {
   max-width: 720px;
