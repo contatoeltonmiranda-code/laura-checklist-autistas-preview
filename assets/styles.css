@@ -581,20 +581,22 @@ p + p { margin-top: 1rem; }
 /* Micro-CTA destacado */
 .micro-cta {
   margin-top: 3rem;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(236,72,153,0.06));
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-lg);
+  padding: 1.75rem 2.5rem;
+  background: transparent;
+  border: none;
   text-align: center;
   position: relative;
 }
 .micro-cta p {
-  font-size: var(--text-xl);
-  color: var(--text-primary);
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  max-width: 640px;
+  font: 500 var(--text-base)/1.6 var(--font-body);
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  max-width: 540px;
   margin-inline: auto;
+  font-style: italic;
+}
+.micro-cta .btn {
+  position: relative;
 }
 
 /* ---------- 9. MECHANISM / EDUCATION ---------- */
