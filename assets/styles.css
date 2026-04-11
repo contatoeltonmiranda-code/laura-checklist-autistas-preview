@@ -162,11 +162,10 @@ a:hover { color: var(--gold-bright); }
 }
 .mec-card__layered {
   position: absolute;
-  top: 50%; right: 50%;
-  transform: translateY(-50%);
-  font: 700 clamp(5rem, 14vw, 11rem)/0.85 var(--font-display);
-  color: rgba(255, 255, 255, 0.08);
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  bottom: -15%; right: 40%;
+  font: 700 clamp(7rem, 18vw, 16rem)/0.8 var(--font-display);
+  color: rgba(255, 255, 255, 0.06);
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.06em;
   text-transform: uppercase;
   pointer-events: none;
@@ -178,6 +177,8 @@ a:hover { color: var(--gold-bright); }
   position: relative;
   z-index: 1;
   max-width: 500px;
+  margin-bottom: -4rem;
+  margin-top: -2rem;
   width: 100%;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(59,130,246,0.3));
 }
