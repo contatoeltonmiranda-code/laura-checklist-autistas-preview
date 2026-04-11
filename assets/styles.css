@@ -143,7 +143,7 @@ a:hover { color: var(--gold-bright); }
 }
 @media (min-width: 900px) {
   .mec-card {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 380px 1fr;
   }
 }
 .mec-card__visual {
@@ -155,9 +155,9 @@ a:hover { color: var(--gold-bright); }
 }
 @media (min-width: 900px) {
   .mec-card__visual {
-    margin-left: -120px;
-    margin-top: -2rem;
-    margin-bottom: -2rem;
+    margin-left: -160px;
+    margin-top: -3rem;
+    margin-bottom: -3rem;
   }
 }
 .mec-card__layered {
@@ -177,18 +177,18 @@ a:hover { color: var(--gold-bright); }
 .mec-card__img {
   position: relative;
   z-index: 1;
-  max-width: 260px;
+  max-width: 380px;
   width: 100%;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(59,130,246,0.3));
 }
 .mec-card__text {
-  padding: 2rem;
+  padding: 2.5rem 2.5rem 2.5rem 1.5rem;
   position: relative;
   z-index: 1;
 }
 .mec-card__text .eyebrow { margin-bottom: 1rem; }
-.mec-card__text h2 { margin-bottom: 1.25rem; }
-.mec-card__text p { margin-bottom: 0.875rem; }
+.mec-card__text h2 { margin-bottom: 1.25rem; font-size: var(--text-3xl); }
+.mec-card__text p { margin-bottom: 0.875rem; font-size: var(--text-base); }
 .mec-card__text .pull-quote {
   margin-top: 1.25rem;
   padding-top: 1rem;
