@@ -322,7 +322,7 @@ p + p { margin-top: 1rem; }
   border-image: linear-gradient(180deg, var(--cyan-glow) 0%, transparent 100%) 1;
   margin: 2rem 0;
   max-width: 52ch;
-  background: linear-gradient(90deg, currentColor 0%, currentColor 50%, rgba(96,165,250,0.3) 100%);
+  background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 50%, rgba(255,255,255,0.25) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1376,8 +1376,8 @@ p + p { margin-top: 1rem; }
   content: '';
   position: absolute;
   top: 0; right: 0;
-  width: 30%; height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.06) 100%);
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, rgba(99,102,241,0.1) 0%, transparent 100%);
   pointer-events: none;
 }
 .scenes-list li::before {
