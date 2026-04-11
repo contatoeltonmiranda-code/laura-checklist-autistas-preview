@@ -618,6 +618,17 @@ p + p { margin-top: 1rem; }
 .section-head--center { text-align: center; }
 .section-head--center h2 { max-width: 700px; margin-inline: auto; }
 
+/* ---------- 7f. BORDER LEFT GRADIENT ---------- */
+.section--border-left::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cyan-glow) 0%, var(--indigo-glow) 40%, transparent 100%);
+  z-index: 3;
+}
+
 /* ---------- 7e. WAVE SEPARATOR ---------- */
 .section--wave-top {
   position: relative;
