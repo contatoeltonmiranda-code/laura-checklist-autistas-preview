@@ -486,8 +486,9 @@ p + p { margin-top: 1rem; }
   max-width: 58ch;
 }
 .hero__cta-row {
-  display: flex; flex-wrap: wrap; gap: 1rem;
+  display: flex; flex-wrap: wrap; gap: 1.25rem;
   margin-bottom: 1.5rem;
+  align-items: center;
 }
 .hero__micro {
   font: 500 var(--text-xs)/1.5 var(--font-mono);
