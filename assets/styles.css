@@ -445,11 +445,10 @@ p + p { margin-top: 1rem; }
 .section--with-divider::before {
   content: '';
   position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: min(90%, 1100px);
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.45), transparent);
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 5%, rgba(96, 165, 250, 0.5) 30%, rgba(96, 165, 250, 0.5) 70%, transparent 95%);
 }
 .hero__divider-icon {
   position: absolute;
