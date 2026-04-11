@@ -1078,7 +1078,7 @@ p + p { margin-top: 1rem; }
   }
 }
 .zigzag__num {
-  font: 700 clamp(4rem, 8vw, 6rem)/0.85 var(--font-display);
+  font: 700 clamp(6rem, 14vw, 12rem)/0.85 var(--font-display);
   color: rgba(255, 255, 255, 0.06);
   letter-spacing: -0.05em;
   padding-right: 1.5rem;
