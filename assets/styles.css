@@ -1523,6 +1523,52 @@ p + p { margin-top: 1rem; }
   border-radius: 50%;
 }
 
+/* ---------- 15b. OFFER BONUS INLINE ---------- */
+.offer__bonus-inline {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+.offer__bonus-inline::after {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--gold), var(--warm-pink), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+.offer__bonus-inline .bonus-label {
+  font: 500 var(--text-xs)/1 var(--font-mono);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.offer__bonus-inline h3 {
+  font-size: var(--text-base);
+  margin: 0.35rem 0;
+}
+.offer__bonus-inline p {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.offer__bonus-price {
+  margin-top: 0.5rem !important;
+  font: 500 var(--text-sm)/1 var(--font-mono);
+  color: var(--text-primary);
+}
+.offer__bonus-price del { color: var(--text-muted); }
+.offer__bonus-price strong { color: #22C55E; }
+
 /* ---------- 16a. OFFER SPLIT LAYOUT ---------- */
 .offer__split {
   display: grid;
