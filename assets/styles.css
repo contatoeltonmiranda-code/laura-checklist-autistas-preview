@@ -203,14 +203,15 @@ a:hover { color: var(--gold-bright); }
 }
 .mec-card__item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: flex-start;
-  padding: 1rem 0;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 0;
   border-bottom: 1px solid var(--border-subtle);
 }
-.mec-card__item .mini-chart-top { width: 100%; }
-.mec-card__item .ev-item__arrow + div { flex: 1; }
+.mec-card__item > div:last-child { flex: 1; }
+.mec-chart-icon {
+  flex-shrink: 0;
+}
 .mec-card__item:last-child { border-bottom: none; }
 .mec-card__item h4 { font-size: var(--text-sm); margin-bottom: 0.35rem; color: var(--text-primary); }
 .mec-card__item p { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.5; }
