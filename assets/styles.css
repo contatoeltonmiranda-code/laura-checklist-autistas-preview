@@ -438,26 +438,28 @@ p + p { margin-top: 1rem; }
   filter: drop-shadow(0 32px 64px rgba(0,0,0,0.6)) drop-shadow(0 0 48px rgba(59,130,246,0.35));
 }
 
-/* ---------- 7b. SECTION DIVIDER ---------- */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  background: var(--bg-primary);
+/* ---------- 7b. SECTION DIVIDER (as border-top) ---------- */
+.section--with-divider {
   position: relative;
-  z-index: 2;
 }
-.section-divider__line {
-  flex: 1;
+.section--with-divider::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 1100px);
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-normal), transparent);
 }
-.section-divider__icon {
-  color: var(--gold);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+.section--with-divider::after {
+  content: '';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--gold);
+  background: var(--bg-secondary);
+  z-index: 3;
 }
 
 /* ---------- 8. PAIN SECTION ---------- */
