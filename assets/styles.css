@@ -688,6 +688,13 @@ p + p { margin-top: 1rem; }
   user-select: none;
   z-index: 1;
 }
+.orbit-scene__bg-word--top {
+  top: 5%; right: -10%;
+}
+.orbit-scene__bg-word--bottom {
+  bottom: 10%; left: -15%;
+  font-size: clamp(3rem, 9vw, 7rem);
+}
 .orbit-scene__mockup {
   position: relative;
   z-index: 2;
