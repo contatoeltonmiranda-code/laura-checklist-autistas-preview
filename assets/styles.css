@@ -162,15 +162,17 @@ a:hover { color: var(--gold-bright); }
 }
 .mec-card__layered {
   position: absolute;
-  bottom: -15%; right: 40%;
-  font: 700 clamp(7rem, 18vw, 16rem)/0.8 var(--font-display);
-  color: rgba(255, 255, 255, 0.06);
-  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
-  letter-spacing: -0.06em;
+  top: 50%; left: -10%;
+  transform: translateY(-50%);
+  font: 900 clamp(7rem, 18vw, 14rem)/0.8 var(--font-display);
+  letter-spacing: -0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
   pointer-events: none;
   user-select: none;
-  white-space: nowrap;
   z-index: 0;
 }
 .mec-card__img {
