@@ -597,7 +597,7 @@ p + p { margin-top: 1rem; }
   width: 100%;
   max-width: 700px;
   aspect-ratio: 1;
-  margin: 2rem auto 2.5rem;
+  margin: 8rem auto 2.5rem;
 }
 /* Ebook center — fixed */
 .orbit-scene__center {
@@ -631,7 +631,7 @@ p + p { margin-top: 1rem; }
 .orbit-scene__card {
   position: absolute;
   top: 50%; left: 50%;
-  width: clamp(200px, 28vw, 280px);
+  width: clamp(240px, 32vw, 340px);
   transform:
     rotate(var(--angle))
     translateY(-320px)
