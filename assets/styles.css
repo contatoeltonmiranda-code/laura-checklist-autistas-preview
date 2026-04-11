@@ -448,18 +448,19 @@ p + p { margin-top: 1rem; }
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: min(90%, 1100px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-normal), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.45), transparent);
 }
-.section--with-divider::after {
-  content: '';
+.section-divider-icon {
   position: absolute;
-  top: -10px; left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 18px; height: 18px;
-  border: 1.5px solid var(--gold);
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  color: var(--gold);
   background: var(--bg-secondary);
-  z-index: 3;
+  padding: 0 0.5rem;
+  display: grid;
+  place-items: center;
 }
 
 /* ---------- 8. PAIN SECTION ---------- */
