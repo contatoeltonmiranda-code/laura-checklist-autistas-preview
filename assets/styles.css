@@ -438,6 +438,28 @@ p + p { margin-top: 1rem; }
   filter: drop-shadow(0 32px 64px rgba(0,0,0,0.6)) drop-shadow(0 0 48px rgba(59,130,246,0.35));
 }
 
+/* ---------- 7b. SECTION DIVIDER ---------- */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  z-index: 2;
+}
+.section-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-normal), transparent);
+}
+.section-divider__icon {
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
 /* ---------- 8. PAIN SECTION ---------- */
 .pain-cards {
   display: grid;
