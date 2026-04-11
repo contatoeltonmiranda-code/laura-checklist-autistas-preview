@@ -318,9 +318,13 @@ p + p { margin-top: 1rem; }
   line-height: 1.25;
   color: var(--cyan-glow);
   padding: 2rem 0 2rem 2rem;
-  border-left: 3px solid var(--cyan-glow);
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, var(--cyan-glow) 0%, transparent 100%) 1;
   margin: 2rem 0;
   max-width: 52ch;
+  background: linear-gradient(90deg, currentColor 0%, currentColor 50%, rgba(96,165,250,0.3) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .pull-quote strong { color: var(--text-primary); }
 
