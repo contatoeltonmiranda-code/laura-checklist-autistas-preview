@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompts de Imagem — LP Laura</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0F172A; color: #E2E8F0; line-height: 1.6; padding: 2rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: #fff; }
+  .subtitle { color: #94A3B8; margin-bottom: 2.5rem; }
+  .card { background: #1E293B; border: 1px solid #334155; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+  .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .card-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #3B82F6, #8B5CF6); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+  .card-title { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .card-section { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #60A5FA; margin-top: 0.25rem; }
+  .card-desc { color: #94A3B8; margin-bottom: 1rem; font-size: 0.9rem; }
+  .prompt-box { background: #0F172A; border: 1px solid #334155; border-radius: 10px; padding: 1.25rem; font-family: 'Consolas', 'Courier New', monospace; font-size: 0.85rem; color: #CBD5E1; line-height: 1.7; position: relative; white-space: pre-wrap; word-wrap: break-word; }
+  .prompt-box::before { content: 'PROMPT'; position: absolute; top: -10px; left: 12px; background: #1E293B; padding: 0 8px; font-size: 0.65rem; letter-spacing: 0.12em; color: #60A5FA; font-family: 'Segoe UI', sans-serif; }
+  .meta { display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+  .meta-item { font-size: 0.8rem; color: #64748B; }
+  .meta-item strong { color: #94A3B8; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; background: #334155; border: none; color: #94A3B8; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; transition: background 0.2s; }
+  .copy-btn:hover { background: #3B82F6; color: #fff; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, #334155, transparent); margin: 0.5rem 0 2rem; }
+  .sub-card { background: #162032; border: 1px solid #1E3A5F; border-radius: 10px; padding: 1.25rem; margin-top: 1rem; }
+  .sub-card h4 { font-size: 0.95rem; color: #FBBF24; margin-bottom: 0.75rem; }
+</style>
+</head>
+<body>
+
+<h1>Prompts de Imagem — LP Laura</h1>
+<p class="subtitle">4 prompts prontos para o Nano Banana. Clique em "Copiar" para usar.</p>
+<div class="divider"></div>
+
+<!-- PROMPT 1 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">1</div>
+    <div>
+      <div class="card-title">Hero — Familia sem fundo</div>
+      <div class="card-section">Secao: Hero principal</div>
+    </div>
+  </div>
+  <p class="card-desc">Substituir o ebook mockup por uma imagem emocional de mae com crianca. PNG com fundo transparente pra integrar no hero dark.</p>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>A warm, emotional photograph of a young mother (30-35 years old, European/Portuguese appearance) gently hugging her child (5-7 years old) from behind, both looking forward with calm, peaceful expressions. The mother has a soft smile of relief. The child appears relaxed and secure. Soft natural lighting, warm tones. Full body shot, clean composition. Transparent background (PNG cutout style, no background). Photorealistic, high quality, editorial portrait style. No text, no logos. Output: 800x1000px, PNG with transparent background.</div>
+  <div class="meta">
+    <div class="meta-item"><strong>Tamanho:</strong> 800x1000px (vertical)</div>
+    <div class="meta-item"><strong>Formato:</strong> PNG transparente</div>
+    <div class="meta-item"><strong>Onde usar:</strong> Hero, lado direito</div>
+  </div>
+</div>
+
+<!-- PROMPT 2 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">2</div>
+    <div>
+      <div class="card-title">Produto — Crianca com checklist</div>
+      <div class="card-section">Secao: Apresentacao do produto</div>
+    </div>
+  </div>
+  <p class="card-desc">Imagem que represente "organizacao visual da rotina" — crianca olhando pra um checklist no frigorifico. Transmite o uso real do produto.</p>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>A candid photograph of a young child (5-6 years old) standing in a bright kitchen, looking up at a colorful visual checklist pinned to a refrigerator door. The checklist has simple icons and checkmarks visible with labels written in Portuguese language (e.g. "Pequeno-almoco", "Escovar dentes", "Vestir roupa"). The child is pointing at the next step with a calm, focused expression. Warm morning light coming from a window. Cozy home environment. Soft depth of field. Photorealistic, lifestyle photography style. Any text on the checklist must be in Portuguese. Transparent background or clean white/neutral background. Output: 600x800px, PNG with transparent background.</div>
+  <div class="meta">
+    <div class="meta-item"><strong>Tamanho:</strong> 600x800px (vertical)</div>
+    <div class="meta-item"><strong>Formato:</strong> PNG transparente</div>
+    <div class="meta-item"><strong>Onde usar:</strong> Secao produto, lado direito</div>
+  </div>
+</div>
+
+<!-- PROMPT 3 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">3</div>
+    <div>
+      <div class="card-title">Zigzag — 4 capas tematicas</div>
+      <div class="card-section">Secao: Por dentro do checklist</div>
+    </div>
+  </div>
+  <p class="card-desc">4 capas de ebook estilo similar a capa atual mas tematizadas por momento do dia. Paleta dark blue cosmica. Gerar 1 por vez.</p>
+
+  <div class="sub-card">
+    <h4>Card 1 — Checklist completo (dia inteiro)</h4>
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Ebook cover design, dark blue cosmic gradient background (#1E40AF to #0A0E27), centered illustration of a glowing sun arc showing sunrise to sunset journey. Title area left blank (no text). Minimalist, premium design. Soft cyan and gold glow effects. Digital art style. Output: 600x600px, PNG format.</div>
+  </div>
+
+  <div class="sub-card">
+    <h4>Card 2 — Rotina da manha</h4>
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Ebook cover design, dark blue cosmic gradient background (#1E40AF to #0A0E27), centered illustration of a warm golden sunrise with soft rays coming through a window silhouette. A small clock showing 7:00 AM subtly visible. No text. Minimalist, premium, glowing warm light effects. Digital art style. Output: 600x600px, PNG format.</div>
+  </div>
+
+  <div class="sub-card">
+    <h4>Card 3 — Momentos de transicao</h4>
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Ebook cover design, dark blue cosmic gradient background (#1E40AF to #0A0E27), centered illustration of two connected arrows flowing smoothly from one activity to another, with soft gradient glow transition effect (cyan to indigo). Abstract, minimalist. No text. Digital art style. Output: 600x600px, PNG format.</div>
+  </div>
+
+  <div class="sub-card">
+    <h4>Card 4 — Rotina da noite</h4>
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Ebook cover design, dark blue cosmic gradient background (#1E40AF to #0A0E27), centered illustration of a crescent moon with soft stars and a gentle glow, creating a peaceful nighttime atmosphere. Warm indigo and soft purple tones. No text. Minimalist, premium design. Digital art style. Output: 600x600px, PNG format.</div>
+  </div>
+
+  <div class="meta">
+    <div class="meta-item"><strong>Tamanho:</strong> 600x600px cada</div>
+    <div class="meta-item"><strong>Formato:</strong> PNG</div>
+    <div class="meta-item"><strong>Onde usar:</strong> Cards zigzag 1-4</div>
+  </div>
+</div>
+
+<!-- PROMPT 4 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">4</div>
+    <div>
+      <div class="card-title">8 Cenas — Background de fundo</div>
+      <div class="card-section">Secao: Reconhece alguma destas cenas?</div>
+    </div>
+  </div>
+  <p class="card-desc">Imagem abstrata de fundo — silhueta de interior de casa com luz quente. Sutil pra nao competir com o texto. Vai como background-image com opacidade baixa.</p>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Abstract dark blue atmospheric background image for a website section. Subtle silhouette of a home interior with a window casting soft warm light across a dark room. Very low opacity, moody, cinematic. Deep navy blue (#0A0E27) dominant color with hints of warm amber light from the window. No people, no faces, no text. Atmospheric, editorial, premium feel. Ultra wide format 1920x800px. Low contrast, designed to have text overlaid on top. Output: 1920x800px, JPG format.</div>
+  <div class="meta">
+    <div class="meta-item"><strong>Tamanho:</strong> 1920x800px (landscape)</div>
+    <div class="meta-item"><strong>Formato:</strong> JPG</div>
+    <div class="meta-item"><strong>Onde usar:</strong> Background da secao 8 cenas</div>
+  </div>
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const box = btn.parentElement;
+  const text = box.textContent.replace('Copiar', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copiado!';
+    btn.style.background = '#22C55E';
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.style.background = ''; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
