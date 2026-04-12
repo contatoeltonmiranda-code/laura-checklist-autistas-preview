@@ -242,7 +242,7 @@ a:hover { color: var(--gold-bright); }
   margin-bottom: 0.5rem;
 }
 .section--hero {
-  background: var(--gradient-hero-bg);
+  background: linear-gradient(rgba(10,14,39,0.75), rgba(10,14,39,0.85)), url('../assets/images/backgroundfundo.png') center/cover no-repeat, var(--gradient-hero-bg);
   padding-block: clamp(2.5rem, 4vw + 1rem, 5rem) clamp(2rem, 3vw + 1rem, 4rem);
 }
 .section--hero::after {
@@ -1553,7 +1553,7 @@ p + p { margin-top: 1rem; }
 
 /* ---------- 17. OFFER BACKGROUND ---------- */
 .section--offer {
-  background: var(--bg-primary);
+  background: linear-gradient(rgba(10,14,39,0.82), rgba(10,14,39,0.9)), url('../assets/images/backgroundfundo.png') center/cover no-repeat, var(--bg-primary);
   padding-block: clamp(2.5rem, 4vw + 1rem, 5rem) clamp(2rem, 3vw + 1rem, 4rem);
   position: relative;
   overflow: hidden;
