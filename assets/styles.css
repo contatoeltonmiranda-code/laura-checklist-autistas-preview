@@ -690,6 +690,28 @@ p + p { margin-top: 1rem; }
   z-index: 3;
 }
 
+/* ---------- 7h. ABSTRACT BACKGROUND ---------- */
+.section--abstract-bg {
+  position: relative;
+  overflow: hidden;
+}
+.section--abstract-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 400px 300px at 5% 20%, rgba(96,165,250,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 400px at 90% 70%, rgba(139,92,246,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 200px at 50% 100%, rgba(245,158,11,0.03) 0%, transparent 70%),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px, transparent 60px,
+      rgba(96,165,250,0.02) 60px, rgba(96,165,250,0.02) 61px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ---------- 7e. WAVE SEPARATOR ---------- */
 .section--wave-top {
   position: relative;
