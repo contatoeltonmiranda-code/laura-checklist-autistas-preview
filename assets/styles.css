@@ -445,6 +445,82 @@ p + p { margin-top: 1rem; }
 }
 .nav__cta:hover { transform: translateY(-1px); color: #fff; }
 
+/* Nav urgency label (replaces brand) */
+.nav__urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font: 600 var(--text-xs)/1 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-bright);
+  white-space: nowrap;
+}
+.nav__urgency-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  box-shadow: 0 0 10px var(--gold-bright);
+  animation: navPulse 1.6s ease-in-out infinite;
+}
+@keyframes navPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav__urgency-dot { animation: none; }
+}
+
+/* Nav countdown timer (replaces CTA) */
+.nav__timer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+.nav__timer-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 2.1ch;
+}
+.nav__timer-num {
+  font: 700 1.125rem/1 var(--font-mono);
+  color: var(--cyan-glow);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.nav__timer-label {
+  font: 500 0.5625rem/1 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+.nav__timer-sep {
+  font: 700 1rem/1 var(--font-mono);
+  color: var(--text-muted);
+  padding-bottom: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .nav__urgency {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    gap: 0.4rem;
+  }
+  .nav__urgency-dot { width: 6px; height: 6px; }
+  .nav__timer { gap: 0.35rem; }
+  .nav__timer-num { font-size: 0.9375rem; }
+  .nav__timer-label { font-size: 0.5rem; letter-spacing: 0.08em; }
+  .nav__timer-sep { font-size: 0.8125rem; padding-bottom: 0.75rem; }
+}
+@media (max-width: 420px) {
+  .nav__urgency { display: none; }
+}
+
 /* ---------- 7. HERO ---------- */
 .hero { position: relative; }
 .hero::before {

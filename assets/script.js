@@ -96,6 +96,35 @@
     setInterval(updateTimer, 1000);
   }
 
+  // ---------- Nav countdown (Europa/Lisboa, 30 Abril 2026 23:59:59) ----------
+  const ntDays = document.getElementById('nt-days');
+  const ntHours = document.getElementById('nt-hours');
+  const ntMins = document.getElementById('nt-mins');
+  const ntSecs = document.getElementById('nt-secs');
+  if (ntDays && ntHours && ntMins && ntSecs) {
+    // Europa/Lisboa em 30/04/2026 esta em WEST (UTC+1) -> 22:59:59 UTC
+    const navDeadline = Date.UTC(2026, 3, 30, 22, 59, 59);
+    const padN = (n) => String(n).padStart(2, '0');
+    const updateNav = () => {
+      const diff = navDeadline - Date.now();
+      if (diff <= 0) {
+        ntDays.textContent = '00'; ntHours.textContent = '00';
+        ntMins.textContent = '00'; ntSecs.textContent = '00';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const sc = Math.floor((diff % 60000) / 1000);
+      ntDays.textContent = padN(d);
+      ntHours.textContent = padN(h);
+      ntMins.textContent = padN(m);
+      ntSecs.textContent = padN(sc);
+    };
+    updateNav();
+    setInterval(updateNav, 1000);
+  }
+
   // ---------- Pulse no CTA crítico da oferta ----------
   const criticalCTAs = document.querySelectorAll('[data-pulse]');
   if (!prefersReduced) {

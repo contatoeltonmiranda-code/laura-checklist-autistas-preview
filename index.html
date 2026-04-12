@@ -28,8 +28,31 @@
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="container nav__inner">
-    <a href="#top" class="nav__brand">Catarina<span>.</span></a>
-    <a href="#oferta" class="nav__cta">Quero por 14,90 €</a>
+    <span class="nav__urgency" aria-label="Oferta por tempo limitado">
+      <span class="nav__urgency-dot" aria-hidden="true"></span>
+      Por tempo limitado
+    </span>
+    <div class="nav__timer" id="nav-timer" role="timer" aria-live="polite" aria-label="Contagem decrescente da oferta">
+      <div class="nav__timer-block">
+        <span class="nav__timer-num" id="nt-days">00</span>
+        <span class="nav__timer-label">Dias</span>
+      </div>
+      <span class="nav__timer-sep" aria-hidden="true">:</span>
+      <div class="nav__timer-block">
+        <span class="nav__timer-num" id="nt-hours">00</span>
+        <span class="nav__timer-label">Horas</span>
+      </div>
+      <span class="nav__timer-sep" aria-hidden="true">:</span>
+      <div class="nav__timer-block">
+        <span class="nav__timer-num" id="nt-mins">00</span>
+        <span class="nav__timer-label">Min</span>
+      </div>
+      <span class="nav__timer-sep" aria-hidden="true">:</span>
+      <div class="nav__timer-block">
+        <span class="nav__timer-num" id="nt-secs">00</span>
+        <span class="nav__timer-label">Seg</span>
+      </div>
+    </div>
   </div>
 </nav>
 
