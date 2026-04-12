@@ -1160,16 +1160,14 @@ p + p { margin-top: 1rem; }
 
 
 /* ---------- 10b. PRODUTO COMPACT ---------- */
-.section--produto-compact .section-head {
-  margin-bottom: 1.5rem !important;
+.section--produto-compact .product__body .section-head {
+  margin-bottom: 2rem !important;
   padding-bottom: 0 !important;
+  text-align: left;
 }
-.section--produto-compact .section-head p {
-  margin-top: 0.5rem !important;
+.section--produto-compact .product__body .section-head p {
+  margin-top: 0.75rem !important;
   margin-bottom: 0 !important;
-}
-.section--produto-compact .product__grid {
-  margin-top: 0 !important;
 }
 .section--produto-compact .product__body {
   padding-top: 0 !important;
@@ -1178,22 +1176,9 @@ p + p { margin-top: 1rem; }
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
-/* When grid is the first element and section-head comes AFTER it */
-.section--produto-compact .product__grid-split--first {
-  margin-top: 0 !important;
-}
-.section--produto-compact .section-head--post {
-  margin-top: 3.5rem !important;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-.section--produto-compact .section-head--post p {
-  margin-top: 0.75rem !important;
-  margin-bottom: 0 !important;
-}
 @media (min-width: 900px) {
-  .section--produto-compact .section-head--post {
-    margin-top: 4.5rem !important;
+  .section--produto-compact .product__body .section-head {
+    margin-bottom: 2.5rem !important;
   }
 }
 
@@ -1266,7 +1251,7 @@ p + p { margin-top: 1rem; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   margin-top: 1.5rem;
 }
 .product__grid-split .product__body { padding: 0; }
@@ -1326,7 +1311,7 @@ p + p { margin-top: 1rem; }
   .product__grid-split {
     grid-template-columns: 1.1fr 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
   }
   .product__grid-split .product__body { order: 1; padding-right: 1rem; }
   .product__visual-split {
@@ -1658,12 +1643,13 @@ p + p { margin-top: 1rem; }
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
+  overflow: hidden;
 }
 @media (min-width: 900px) { .author__grid { grid-template-columns: 1fr 1.3fr; } }
 
 .author__visual {
   position: relative;
-  min-height: 640px;
+  min-height: 900px;
   overflow: hidden;
 }
 /* Vertical name treatment — editorial side label, rotated -90deg so text reads bottom-up.
@@ -1688,30 +1674,35 @@ p + p { margin-top: 1rem; }
 }
 .author__name-line {
   display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(3rem, 5vw, 4.75rem);
-  letter-spacing: -0.025em;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(9rem, 15vw, 14rem);
+  letter-spacing: -0.035em;
   text-transform: uppercase;
   /* Gradient fade: top of line fully white, fading to transparent at bottom
      (after -90deg rotation this becomes a left-to-right fade in the final visual). */
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 32%, rgba(255,255,255,0.3) 72%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  /* Cyan-glow halo: editorial glow that dialogues with the cosmic dark bg */
+  filter:
+    drop-shadow(0 0 18px rgba(34, 211, 238, 0.28))
+    drop-shadow(0 0 44px rgba(34, 211, 238, 0.14));
 }
 @media (max-width: 899px) {
   .author__visual {
-    min-height: 400px;
+    min-height: 500px;
   }
   .author__name-line {
-    font-size: clamp(2rem, 7.5vw, 3rem);
+    font-size: clamp(5rem, 18vw, 8rem);
   }
 }
 @media (min-width: 1200px) {
   .author__name-line {
-    font-size: clamp(3.75rem, 4.5vw, 5.25rem);
+    font-size: clamp(11rem, 13.5vw, 15rem);
   }
 }
 .author__body p {
