@@ -178,7 +178,8 @@ a:hover { color: var(--gold-bright); }
 .mec-card__img {
   position: relative;
   z-index: 1;
-  max-width: 500px;
+  max-width: 680px;
+  width: 100%;
   margin-bottom: -4rem;
   margin-top: -2rem;
   width: 100%;
@@ -1676,10 +1677,10 @@ p + p { margin-top: 1rem; }
 }
 .offer__right { overflow: visible; padding-top: 0; }
 .offer__right-mockup {
-  width: 320px;
-  max-width: 100%;
+  width: 480px;
+  max-width: 120%;
   display: block;
-  margin: -5rem auto 1.5rem;
+  margin: -7rem auto 1.5rem;
   filter: drop-shadow(0 16px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(59,130,246,0.3));
   position: relative;
   z-index: 3;
