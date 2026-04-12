@@ -1677,7 +1677,7 @@ p + p { margin-top: 1rem; }
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(9rem, 15vw, 14rem);
+  font-size: clamp(7.5rem, 12vw, 11.5rem);
   letter-spacing: -0.035em;
   text-transform: uppercase;
   /* Gradient fade: top of line fully white, fading to transparent at bottom
@@ -1697,12 +1697,12 @@ p + p { margin-top: 1rem; }
     min-height: 500px;
   }
   .author__name-line {
-    font-size: clamp(5rem, 18vw, 8rem);
+    font-size: clamp(4rem, 15vw, 6.5rem);
   }
 }
 @media (min-width: 1200px) {
   .author__name-line {
-    font-size: clamp(11rem, 13.5vw, 15rem);
+    font-size: clamp(9rem, 11vw, 12.5rem);
   }
 }
 .author__body p {
