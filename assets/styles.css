@@ -1460,7 +1460,7 @@ p + p { margin-top: 1rem; }
   position: absolute;
   top: 0; left: 0;
   width: 50%; height: 4px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 50%, transparent 100%);
+  background: linear-gradient(90deg, var(--cyan-glow) 0%, var(--indigo-glow) 50%, transparent 100%);
   pointer-events: none;
   border-top-left-radius: var(--radius-md);
 }
