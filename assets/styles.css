@@ -184,6 +184,15 @@ a:hover { color: var(--gold-bright); }
   width: 100%;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(59,130,246,0.3));
 }
+.mec-card {
+  background: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+.mec-card__text h2,
+.mec-card__text h4,
+.mec-card__text p { color: #1A1A2E !important; -webkit-text-fill-color: #1A1A2E !important; }
+.mec-card__text h2 { -webkit-text-fill-color: initial !important; }
+.mec-card__text cite { color: #64748B !important; }
 .mec-card__text {
   padding: 2.5rem 2.5rem 2.5rem 1.5rem;
   position: relative;
@@ -1189,14 +1198,18 @@ p + p { margin-top: 1rem; }
   transform: translateY(-3px);
 }
 .zigzag__card-text { flex: 1; position: relative; z-index: 1; }
+.zigzag__card {
+  background: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
 .zigzag__card-text h3 {
   font-size: var(--text-xl);
   margin-bottom: 0.75rem;
-  color: var(--text-primary);
+  color: #1A1A2E !important;
 }
 .zigzag__card-text p {
   font-size: var(--text-base);
-  color: var(--text-body);
+  color: #3A3A5C !important;
   line-height: 1.65;
 }
 /* Gradient transparente nos cards — ímpares lado direito, pares lado esquerdo */
@@ -1344,9 +1357,11 @@ p + p { margin-top: 1rem; }
 .qualify-col {
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
 }
+.qualify-col h3 { color: #1A1A2E !important; }
+.qualify-col li { color: #3A3A5C !important; }
 .qualify-col__head {
   display: flex; align-items: center; gap: .85rem;
   margin-bottom: 1.5rem;
@@ -1628,8 +1643,8 @@ p + p { margin-top: 1rem; }
 .offer__left .eyebrow { margin-bottom: 0.75rem; }
 .offer__left h2 { margin-bottom: 1.25rem; }
 .offer__right {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: var(--radius-xl);
   padding: 2rem;
   text-align: center;
@@ -1646,6 +1661,13 @@ p + p { margin-top: 1rem; }
   -webkit-mask-composite: xor; mask-composite: exclude;
   pointer-events: none;
 }
+.offer__right .offer__old,
+.offer__right .offer__price__label,
+.offer__right .offer__price__note { color: #64748B !important; }
+.offer__right .offer__price__big { color: #1A1A2E !important; -webkit-text-fill-color: #1A1A2E !important; }
+.offer__right .offer__micro { color: #94A3B8 !important; }
+.offer__right .countdown-timer__num { color: #1A1A2E !important; }
+.offer__right .countdown-timer__block { background: #F1F5F9; border-color: #E2E8F0; }
 .offer__right-mockup {
   width: 180px;
   margin: 0 auto 1.5rem;
@@ -2080,7 +2102,7 @@ p + p { margin-top: 1rem; }
   border-radius: var(--radius-lg);
   padding: 2rem;
   margin: 2.5rem auto;
-  max-width: 700px;
+  max-width: 900px;
 }
 .final-cta__quote {
   font-family: var(--font-serif);
