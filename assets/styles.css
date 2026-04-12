@@ -1102,7 +1102,7 @@ p + p { margin-top: 1rem; }
 
 /* ---------- 10b. PRODUTO COMPACT ---------- */
 .section--produto-compact .section-head {
-  margin-bottom: 0 !important;
+  margin-bottom: 1.5rem !important;
   padding-bottom: 0 !important;
 }
 .section--produto-compact .section-head p {
@@ -1110,7 +1110,7 @@ p + p { margin-top: 1rem; }
   margin-bottom: 0 !important;
 }
 .section--produto-compact .product__grid {
-  margin-top: -3rem !important;
+  margin-top: 0 !important;
 }
 .section--produto-compact .product__body {
   padding-top: 0 !important;
@@ -1124,24 +1124,26 @@ p + p { margin-top: 1rem; }
 .product__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  align-items: center;
-  margin-top: -1rem;
+  gap: 2rem;
+  align-items: stretch;
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.product__grid .product__body {
+  padding: 2rem;
 }
 @media (min-width: 900px) {
   .product__grid {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
-    background: var(--gradient-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    align-items: stretch;
   }
-  .product__grid--reversed .product__body {
-    order: 1;
+  .product__grid .product__body {
     padding: 2.5rem 3rem;
   }
+  .product__grid--reversed .product__body { order: 1; }
   .product__grid--reversed .product__visual { order: 2; }
 }
 .product__visual {
