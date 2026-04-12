@@ -671,7 +671,7 @@ p + p { margin-top: 1rem; }
   z-index: 3;
 }
 .section--border-top-bottom {
-  background-image: url('../assets/images/scenes-bg.png');
+  background-image: linear-gradient(rgba(10,14,39,0.85), rgba(10,14,39,0.85)), url('../assets/images/scenes-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
