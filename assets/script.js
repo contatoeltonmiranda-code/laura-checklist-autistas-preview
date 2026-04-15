@@ -96,33 +96,74 @@
     setInterval(updateTimer, 1000);
   }
 
-  // ---------- Nav countdown (Europa/Lisboa, 30 Abril 2026 23:59:59) ----------
-  const ntDays = document.getElementById('nt-days');
-  const ntHours = document.getElementById('nt-hours');
-  const ntMins = document.getElementById('nt-mins');
-  const ntSecs = document.getElementById('nt-secs');
-  if (ntDays && ntHours && ntMins && ntSecs) {
-    // Europa/Lisboa em 30/04/2026 esta em WEST (UTC+1) -> 22:59:59 UTC
-    const navDeadline = Date.UTC(2026, 3, 30, 22, 59, 59);
-    const padN = (n) => String(n).padStart(2, '0');
-    const updateNav = () => {
-      const diff = navDeadline - Date.now();
+  // ---------- Nav dynamic offer text + 10min persistent countdown ----------
+  const navOfferText = document.getElementById('nav-offer-text');
+  const navCountdown = document.getElementById('nav-countdown');
+
+  if (navOfferText) {
+    const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    const today = new Date();
+    const d0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const d1 = new Date(d0); d1.setDate(d0.getDate() - 1);
+    const d2 = new Date(d0); d2.setDate(d0.getDate() - 2);
+    const days = [d2, d1, d0];
+    // Agrupa dias consecutivos por mês mantendo ordem
+    const groups = [];
+    days.forEach((dt) => {
+      const key = dt.getMonth() + '-' + dt.getFullYear();
+      const last = groups[groups.length - 1];
+      if (last && last.key === key) {
+        last.days.push(dt.getDate());
+      } else {
+        groups.push({ key, month: dt.getMonth(), days: [dt.getDate()] });
+      }
+    });
+    const fmtGroup = (g) => {
+      const ds = g.days;
+      let str;
+      if (ds.length === 1) str = ds[0] + '';
+      else if (ds.length === 2) str = ds[0] + ' e ' + ds[1];
+      else str = ds.slice(0, -1).join(', ') + ' e ' + ds[ds.length - 1];
+      return str + ' de ' + MESES[g.month];
+    };
+    const parts = groups.map(fmtGroup);
+    let texto;
+    if (parts.length === 1) texto = 'Oferta válida nos dias ' + parts[0];
+    else texto = 'Oferta válida nos dias ' + parts.join(' e ');
+    navOfferText.textContent = texto;
+  }
+
+  if (navCountdown) {
+    const STORAGE_KEY = 'laura_timer_end';
+    const DURATION = 10 * 60 * 1000;
+    let endTs;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        endTs = parseInt(stored, 10);
+        if (!endTs || isNaN(endTs)) endTs = null;
+      }
+      if (!endTs) {
+        endTs = Date.now() + DURATION;
+        localStorage.setItem(STORAGE_KEY, String(endTs));
+      }
+    } catch (e) {
+      endTs = Date.now() + DURATION;
+    }
+    const pad2 = (n) => String(n).padStart(2, '0');
+    const tickNav = () => {
+      const diff = endTs - Date.now();
       if (diff <= 0) {
-        ntDays.textContent = '00'; ntHours.textContent = '00';
-        ntMins.textContent = '00'; ntSecs.textContent = '00';
+        navCountdown.textContent = '00:00';
+        clearInterval(navTick);
         return;
       }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
+      const m = Math.floor(diff / 60000);
       const sc = Math.floor((diff % 60000) / 1000);
-      ntDays.textContent = padN(d);
-      ntHours.textContent = padN(h);
-      ntMins.textContent = padN(m);
-      ntSecs.textContent = padN(sc);
+      navCountdown.textContent = pad2(m) + ':' + pad2(sc);
     };
-    updateNav();
-    setInterval(updateNav, 1000);
+    tickNav();
+    const navTick = setInterval(tickNav, 1000);
   }
 
   // ---------- Pulse no CTA crítico da oferta ----------

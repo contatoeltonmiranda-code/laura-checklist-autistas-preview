@@ -30,28 +30,10 @@
   <div class="container nav__inner">
     <span class="nav__urgency" aria-label="Oferta por tempo limitado">
       <span class="nav__urgency-dot" aria-hidden="true"></span>
-      Por tempo limitado
+      <span class="nav__urgency-text" id="nav-offer-text">Oferta válida por tempo limitado</span>
     </span>
-    <div class="nav__timer" id="nav-timer" role="timer" aria-live="polite" aria-label="Contagem decrescente da oferta">
-      <div class="nav__timer-block">
-        <span class="nav__timer-num" id="nt-days">00</span>
-        <span class="nav__timer-label">Dias</span>
-      </div>
-      <span class="nav__timer-sep" aria-hidden="true">:</span>
-      <div class="nav__timer-block">
-        <span class="nav__timer-num" id="nt-hours">00</span>
-        <span class="nav__timer-label">Horas</span>
-      </div>
-      <span class="nav__timer-sep" aria-hidden="true">:</span>
-      <div class="nav__timer-block">
-        <span class="nav__timer-num" id="nt-mins">00</span>
-        <span class="nav__timer-label">Min</span>
-      </div>
-      <span class="nav__timer-sep" aria-hidden="true">:</span>
-      <div class="nav__timer-block">
-        <span class="nav__timer-num" id="nt-secs">00</span>
-        <span class="nav__timer-label">Seg</span>
-      </div>
+    <div class="nav__timer" id="nav-timer" role="timer" aria-live="polite" aria-label="Tempo restante da oferta">
+      <span class="nav__timer-num" id="nav-countdown">10:00</span>
     </div>
   </div>
 </nav>
@@ -710,8 +692,8 @@
     <div class="footer__bottom">
       <span>© 2026 Catarina Azevedo. Todos os direitos reservados.</span>
       <span>
-        <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
-        <a href="#">Termos de Uso</a>
+        <a href="https://expertlyadvice.com/politicas-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a> &nbsp;·&nbsp;
+        <a href="https://expertlyadvice.com/termos-de-uso" target="_blank" rel="noopener">Termos de Uso</a>
       </span>
     </div>
   </div>
