@@ -2,6 +2,13 @@
 
 Landing page "Checklist Diario para Criancas Autistas" (Catarina Azevedo) exportada em 14 arquivos JSON, um por secao, prontos para importar no Elementor como **Templates de Secao**.
 
+
+## Import recomendado (consolidado)
+
+**Use `laura-lp-full.json`** — JSON unico com as 14 secoes como containers Elementor separados. Importe este arquivo no Elementor e a pagina inteira vem montada de uma vez.
+
+Os arquivos 01-14 individuais ficam como backup caso queira importar uma secao por vez.
+
 ## Estrategia tecnica
 
 Cada JSON contem:
