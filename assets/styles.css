@@ -2468,12 +2468,9 @@ html.js-reveal .reveal.is-in {
     max-width: 88%;
   }
 
-  /* --- 2.2 MECANISMO: texto fantasma nao cortar + ebook encostado no texto acima --- */
-  .section--wave-top {
-    padding-top: 0;
-  }
+  /* --- 2.2 MECANISMO: reset (sem overlap com secao anterior) --- */
   .mec-card {
-    margin-top: -1rem;
+    margin-top: 0;
   }
   .orbit-scene {
     margin-top: 1rem;
@@ -2522,6 +2519,9 @@ html.js-reveal .reveal.is-in {
   }
 
   /* --- 2.4 ZIGZAG mobile: numero dentro do card, menor, a esquerda --- */
+  .zigzag {
+    gap: 2rem;
+  }
   .zigzag__row {
     position: relative;
     grid-template-columns: 1fr;
@@ -2574,15 +2574,18 @@ html.js-reveal .reveal.is-in {
     padding-block: clamp(1rem, 3vw, 2rem);
   }
 
-  /* --- 2.6 OFERTA: card nao cortar conteudo --- */
+  /* --- 2.6 OFERTA: mockup maior transbordando pra fora do card --- */
+  .offer__card {
+    overflow: visible;
+  }
   .offer__right {
     padding: 1.5rem 1rem;
-    overflow: hidden;
+    overflow: visible;
   }
   .offer__right-mockup {
-    width: 240px;
-    max-width: 85%;
-    margin: -3rem auto 1rem;
+    width: 320px;
+    max-width: 100%;
+    margin: -5rem auto 1rem;
   }
   .offer__left h2 {
     font-size: var(--text-2xl);
