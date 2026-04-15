@@ -1,0 +1,58 @@
+[
+  {
+    "file": "01-nav.json",
+    "kb": "79.7"
+  },
+  {
+    "file": "02-hero.json",
+    "kb": "75.2"
+  },
+  {
+    "file": "03-dor.json",
+    "kb": "76.7"
+  },
+  {
+    "file": "04-mecanismo.json",
+    "kb": "77.1"
+  },
+  {
+    "file": "05-produto.json",
+    "kb": "75.3"
+  },
+  {
+    "file": "06-conteudo-zigzag.json",
+    "kb": "76.4"
+  },
+  {
+    "file": "07-qualificacao.json",
+    "kb": "75.1"
+  },
+  {
+    "file": "08-cenas.json",
+    "kb": "74.4"
+  },
+  {
+    "file": "09-autora.json",
+    "kb": "73.9"
+  },
+  {
+    "file": "10-oferta.json",
+    "kb": "83.5"
+  },
+  {
+    "file": "11-garantia.json",
+    "kb": "74.3"
+  },
+  {
+    "file": "12-faq.json",
+    "kb": "78.9"
+  },
+  {
+    "file": "13-cta-final.json",
+    "kb": "73.6"
+  },
+  {
+    "file": "14-footer.json",
+    "kb": "73.9"
+  }
+]
