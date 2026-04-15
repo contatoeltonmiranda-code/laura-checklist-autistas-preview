@@ -2418,38 +2418,6 @@ html.js-reveal .reveal.is-in {
 .text-center { text-align: center; }
 .mt-4 { margin-top: 2rem; }
 
-/* ========================================
-   MOBILE FIXES v2 — ajustes pontuais
-   ======================================== */
-
-/* --- 2.4 ZIGZAG: numero sempre a ESQUERDA (desktop + mobile) --- */
-@media (min-width: 768px) {
-  .zigzag__row--odd {
-    grid-template-columns: auto 1fr;
-  }
-  .zigzag__row--odd .zigzag__num {
-    order: 1;
-    text-align: right;
-    padding-right: 1.5rem;
-    padding-left: 0;
-  }
-  .zigzag__row--odd .zigzag__card {
-    order: 2;
-  }
-  .zigzag__row--even {
-    grid-template-columns: auto 1fr;
-    margin-left: 0;
-  }
-  .zigzag__row--even .zigzag__num {
-    order: 1;
-    text-align: right;
-    padding-right: 1.5rem;
-    padding-left: 0;
-  }
-  .zigzag__row--even .zigzag__card {
-    order: 2;
-  }
-}
 
 @media (max-width: 767px) {
 
